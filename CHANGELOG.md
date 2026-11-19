@@ -1,0 +1,11 @@
+# YKT Holding — Sürüm Geçmişi
+
+## v1.0.0 (2026-11-19)
+
+### Yenilikler
+- **YKTera / YKT Holding Marka Kimligi & Yeni Logo:** Altin geometrik `Y` monogrami ve elektrik-camgobegi yapay zeka elmas dugumuyle yeni `icon.png` / `icon.ico` / `icon.icns` uygulama simgeleri, sol menu marka rozeti ve `Ayarlar > Hakkinda` logosu tek elden yenilendi.
+- **Gomulu Tarayici (Windows Glow + WebView2):** `eframe 0.37` Windows'ta varsayilan `Glow` (OpenGL) cizici + `WS_CLIPCHILDREN` ile gomulu WebView2 sekmeleri tam calisir hale getirildi (OpenGL yoksa otomatik `Wgpu` yedeklemesi); gercek URL'den kilit simgesi, sayfa ici URL senkronizasyonu, `Git` odak korumasi, `baglanti_istendi` CDP kuyruk korumasi, yetim WebView2 temizligi ve siki `localhost`/userinfo URL siniri eklendi.
+- **Sade Kampus & WCAG AA Arayuz:** Sehir gorunumunden turuncu/beyaz parcacik yagmuru, konteyner/vinc/forklift/duman/kivilcim ogeleri kaldirildi; araclar yalniz aktif is varken gorunur. Sol menu 6 bolume indi (`Organizasyon` -> `Projeler` ust sekmesi), `Hesap`/`Bulten` kaldirildi, `Maliyet` -> `Kota ve butce` altinda birlestirildi, `"Nagihan"` -> `"Kalite denetimi"` oldu, Gece/Gunduz WCAG AA (`>= 4.5:1`) kontrast oranlari testle kilitlendi.
+- **Motor Otomatik Guncelleme (`ykt motor guncelle`):** `claude update` ve `agy update` icin CLI alt komutu, `Ayarlar > Baglantilar > Motorlar > Motorlari guncelle` dugmesi, OS cekirdek `File::try_lock()` kilidi, zaman asiminda `taskkill /T /F` temizligi ve 6 saatlik ayri arka plan guncelleyici eklendi.
+- **Tuketim Butcesi Duyarli `Fable` & `Gemini 4 Neon`:** Ayri haftalik Fable havuzu (`hafta_fable_yuzde`, `fable_esik`) arayuze baglandi; derin mimari/kok-neden/guvenlik isleri sayac taze ve koruma sinirinin altindayken `opus -> fable` terfi edilir, kuyrukta kota dolarsa yalniz otomatik terfiler `opus`'a iner (acik Patron secimi korunur). Kataloga `agy-neon-high` (`gemini-4-neon-high`) ve `agy-neon` (`gemini-4-neon-medium`) eklendi (15 model, `-xhigh` destekli).
+- **Yayin Hatti (`YKT-Holding-Releases`):** `YAYIN_DEPOSU` `ecankinsundev/YKT-Holding-Releases` olarak yapilandirildi ve `crates/ykt-holding/paket/yayinla.js` ile her surumde kurulum/kullanim rehberi (`README.md`), `CHANGELOG.md`, `latest.json` ve GitHub Release varliklarinin otomatik yayinlanmasi eklendi.
