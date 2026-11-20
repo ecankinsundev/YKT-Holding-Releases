@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.0.0</code> (2026-11-19) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.0.1</code> (2026-11-20) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.1">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.0.0)
+## İndirme (v1.0.1)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.0/YKT-Holding_1.0.0_x64-setup.exe) | `6e31f63314f4cb64306a4b0293f6d0ffd1c3786b3d764705eb542f0ee63c2298` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.0/YKT-Holding_1.0.0_x64-portatif.zip) | `c9324910ab8858dc77a74371d589d63c4d6bdabb66b694a3f197ee8bee80b515` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.1_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.1/YKT-Holding_1.0.1_x64-setup.exe) | `7949e0bece5d9a165e5f06adac34841e5fd6277fe63c3cb226cafc44a55cb4c7` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.1_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.1/YKT-Holding_1.0.1_x64-portatif.zip) | `0e0e0982ed0171dab5e8de08f8dcd3aa932f686d9b076994e9dc25898a41ca71` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.1/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.0.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "6e31f63314f4cb64306a4b0293f6d0ffd1c3786b3d764705eb542f0ee63c2298"
+> (Get-FileHash .\YKT-Holding_1.0.1_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "7949e0bece5d9a165e5f06adac34841e5fd6277fe63c3cb226cafc44a55cb4c7"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.0.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.0.1_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.0.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.0.1_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -89,15 +89,13 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.0.0)
+## Mevcut Sürümde Neler Var? (v1.0.1)
 
-### Yenilikler
-- **YKTera / YKT Holding Marka Kimligi & Yeni Logo:** Altin geometrik `Y` monogrami ve elektrik-camgobegi yapay zeka elmas dugumuyle yeni `icon.png` / `icon.ico` / `icon.icns` uygulama simgeleri, sol menu marka rozeti ve `Ayarlar > Hakkinda` logosu tek elden yenilendi.
-- **Gomulu Tarayici (Windows Glow + WebView2):** `eframe 0.37` Windows'ta varsayilan `Glow` (OpenGL) cizici + `WS_CLIPCHILDREN` ile gomulu WebView2 sekmeleri tam calisir hale getirildi (OpenGL yoksa otomatik `Wgpu` yedeklemesi); gercek URL'den kilit simgesi, sayfa ici URL senkronizasyonu, `Git` odak korumasi, `baglanti_istendi` CDP kuyruk korumasi, yetim WebView2 temizligi ve siki `localhost`/userinfo URL siniri eklendi.
-- **Sade Kampus & WCAG AA Arayuz:** Sehir gorunumunden turuncu/beyaz parcacik yagmuru, konteyner/vinc/forklift/duman/kivilcim ogeleri kaldirildi; araclar yalniz aktif is varken gorunur. Sol menu 6 bolume indi (`Organizasyon` -> `Projeler` ust sekmesi), `Hesap`/`Bulten` kaldirildi, `Maliyet` -> `Kota ve butce` altinda birlestirildi, `"Nagihan"` -> `"Kalite denetimi"` oldu, Gece/Gunduz WCAG AA (`>= 4.5:1`) kontrast oranlari testle kilitlendi.
-- **Motor Otomatik Guncelleme (`ykt motor guncelle`):** `claude update` ve `agy update` icin CLI alt komutu, `Ayarlar > Baglantilar > Motorlar > Motorlari guncelle` dugmesi, OS cekirdek `File::try_lock()` kilidi, zaman asiminda `taskkill /T /F` temizligi ve 6 saatlik ayri arka plan guncelleyici eklendi.
-- **Tuketim Butcesi Duyarli `Fable` & `Gemini 4 Neon`:** Ayri haftalik Fable havuzu (`hafta_fable_yuzde`, `fable_esik`) arayuze baglandi; derin mimari/kok-neden/guvenlik isleri sayac taze ve koruma sinirinin altindayken `opus -> fable` terfi edilir, kuyrukta kota dolarsa yalniz otomatik terfiler `opus`'a iner (acik Patron secimi korunur). Kataloga `agy-neon-high` (`gemini-4-neon-high`) ve `agy-neon` (`gemini-4-neon-medium`) eklendi (15 model, `-xhigh` destekli).
-- **Yayin Hatti (`YKT-Holding-Releases`):** `YAYIN_DEPOSU` `ecankinsundev/YKT-Holding-Releases` olarak yapilandirildi ve `crates/ykt-holding/paket/yayinla.js` ile her surumde kurulum/kullanim rehberi (`README.md`), `CHANGELOG.md`, `latest.json` ve GitHub Release varliklarinin otomatik yayinlanmasi eklendi.
+### Yenilikler ve Duzeltmeler
+- **Sol Menu > Kullanim Sekmesi (`Ctrl+8`):** Tum yapay zeka motorlarinin 5 saatlik, gunluk ve haftalik kullanim limitleri tek ekranda toplandi: Claude Code (5 Saatlik, Haftalik, ayri Haftalik Fable havuzu ve durdurma esikleri), Antigravity (`Gemini 4 Neon / Carbon / Argon` ve `AGY Claude` 5 saatlik/haftalik dilimleri + gunluk UTC istek sayaclari), aktif rate-limit kota beklemeleri, yerel Ollama durumu, haftalik ajan kullanimi tablosu ve tek tik `"Olcumu yenile"` (`ykt butce`).
+- **Kota Olcumu Bayatlama Duzeltmesi (`ykt butce` & `ykt-core`):** Onceki haftalik pencereden kalan `claude-code-rate-limit` veya elle kota olcumlerinin yeni haftada `durum/butce.json` dosyasini dondurup 70+ saatlik eski deger gostermesi giderildi (`elle_korunur` haftalik pencere sinirini denetler, ayni hafta icinde suresi dolan 5 saatlik pencereyi donmadan tazeler ve yeni haftada gecmis `bes_saat_sifirlama` kaydini temizler); taze gercek kota olcumu varken ust seritte eski kalibrasyon yasi uyarisi cikarilmaz.
+- **Haritada Gezen Piksel Temizligi (Kampus):** Gokyuzunden gecen kus piksel surusu (`kuslar`) kaldirildi, otopark araclari yalniz aktif is varken (`kosan > 0`) cizilecek sekilde sinirlandirildi ve uzak gorunumde ajanlarin 8x8 renkli kare noktalar yerine gercek piksel-art karakter olarak cizilmesi saglandi.
+- **Sol Menu & Ust Bar Kozmetik Duzeltmesi:** Sol menudeki marka satiri (`YKT HOLDING` + 24px logo) `MENU_GENISLIK` (`150px`) icinde sabitlenecek sekilde sinirlandirildi (`set_max_width` + `Truncate`), boylece sol menunun Kampus ust bari ve limit seridinin ustune binip harfleri kesmesi tamamen giderildi.
 
 ---
 
