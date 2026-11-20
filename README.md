@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.0.2</code> (2026-11-20) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.2">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.0.3</code> (2026-11-20) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.3">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.0.2)
+## İndirme (v1.0.3)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.2_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.2/YKT-Holding_1.0.2_x64-setup.exe) | `40c802d0f1535a870476b6c7e378415e802c16c02f0a5d5ca7ff0299564cc557` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.2_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.2/YKT-Holding_1.0.2_x64-portatif.zip) | `bcd1173300b494b7470de37b5127b932882ed5dd419ec6183a9bcb86fca6f5be` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.2/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.3_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-setup.exe) | `1e643b7850945e570539ea5e38f6e610452f4c75219d35c924a2a142456cf959` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.3_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-portatif.zip) | `eec140b191d1a1f17ef4c61104f3106ad1c024891ff9e635b4b3e7789e25c819` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.0.2_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "40c802d0f1535a870476b6c7e378415e802c16c02f0a5d5ca7ff0299564cc557"
+> (Get-FileHash .\YKT-Holding_1.0.3_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "1e643b7850945e570539ea5e38f6e610452f4c75219d35c924a2a142456cf959"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.0.2_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.0.3_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.0.2_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.0.3_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -89,12 +89,13 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.0.2)
+## Mevcut Sürümde Neler Var? (v1.0.3)
 
 ### Yenilikler ve Duzeltmeler
-- **Uygulama Ici Tam Yerlesik Bolmeli Pencere Yoneticisi (Serbest Pencere Yok):** `Konusmalar`, `Projeler`, `Kullanim`, `Hafiza`, `Tarayici`, `Ayarlar` ve kart panelleri artik serbest (yuzen) pencere olarak acilmaz; tek panel acikken calisma alanini tam ekran (%100) doldurur, ikinci ve sonraki paneller otomatik yan yana / alt alta bolunur. Baslik surukleyerek hedef bolmenin `Sola / Saga / Uste / Alta` yarisina birakabilir, ortadaki ayiricilari surukleyebilir, baslik dugmeleriyle `Sola / Saga / Alta yasla` veya `Tam ekran` (`Ctrl+Shift+X` / cift tik) kullanabilirsin; bir panel kapatilinca kalan paneller bosluk birakmadan genisler. Sol menudeki `Yerlesim` kismina `Tam ekran`, `Yan yana`, `Alt alta` eklendi (`Kademeli` kaldirildi).
-- **Kalici `Sehir gorunumu` Ac/Kapa Anahtari (CPU/GPU Tasarrufu):** Ust seride kaydirmali **`Sehir gorunumu`** anahtar dugmesi eklendi. Gizli konumdayken (veya acik bolmeli paneller ekrani kaplarken) harita cizimi ve 30 FPS yenileme dongusu tamamen durur; secim `~/.ykt/arayuz-harita.txt` dosyasinda kalici olarak saklanir ve gizli modda hafif YKT Holding genel bakis ekrani gosterilir.
-- **"Kampus" Ifadesinin Kaldirilmasi:** Kullanici arayuzundeki tum `Kampus` etiketleri kurumsal holding yapisina uygun olarak **`Ofis`** ve **`Sehir gorunumu`** olarak yenilendi.
+- **Otomatik Butce Kalibrasyonu & Sakin Arayuz:** `ykt butce` artik kalibrasyonsuz taze kurulumda hata vermez, oturum verilerini sessizce tarar ve ilk gercek Claude Code `rate_limit_event` olcumuyle kendi tavanini otomatik kalibre eder; `%0` / `%5` alti dusuk yuzde olcumleri mevcut gecerli tavani bozmaz (`HAFTA_ESIGI = 5.0`). Calisan dongusu kapaliyken arayuz arka planda 15 dakikada bir sessizce `ykt butce` calistirir. Ust seritteki ve `Kullanim` / `Ayarlar > Kota ve butce` ekranlarindaki sari kalibrasyon uyarilari kaldirildi; elle kalibrasyon `Ayarlar > Kota ve butce` altinda istege bagli acilir bolume (`Elle kalibrasyon (istege bagli)`) alindi.
+- **Sade Ust Serit:** Ust seritteki sabit 3'lu butce/limit cubuklari kaldirildi (tum limitler soldaki `Kullanim` sekmesinde). Ust serit tek satirda yalniz onay/kosan/olay cipleri, `Sehir gorunumu` anahtari ve sehir gizliyken kalici `Kosan is: N  |  Patron onayi bekleyen: M  |  Ajan: K` ozet bilgisini gosterir.
+- **Sehir Gorunumu Gizliyken Varsayilan `Tahta | Konusmalar`:** `Sehir gorunumu` kapatildiginda (veya gizli tercihli acilista acik panel yoksa) ekran bos kalmaz; `Tahta` ve `Konusmalar` varsayilan olarak yan yana acilir, ozet bilgi satiri gorunmeye devam eder.
+- **`Projeler` ve `Tahta` Sekme Duzeltmesi:** Sol menude **`Projeler`**'e tiklamak dogrudan `Proje listesi` (`+ Yeni proje` ve proje kartlari) gorunumunu, **`Tahta`**'ya tiklamak ise Kanban is tahtasini acar.
 
 ---
 

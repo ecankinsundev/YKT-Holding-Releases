@@ -1,14 +1,14 @@
 {
-  "version": "1.0.2",
-  "notes": "YKT Holding v1.0.2 (2026-11-20)",
-  "pub_date": "2026-11-20T12:31:45.477Z",
+  "version": "1.0.3",
+  "notes": "YKT Holding v1.0.3 (2026-11-20)",
+  "pub_date": "2026-11-20T17:51:03.414Z",
   "platforms": {
     "windows-x86_64": {
       "signature": "",
-      "url": "https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.2/YKT-Holding_1.0.2_x64-setup.exe",
-      "sha256": "40c802d0f1535a870476b6c7e378415e802c16c02f0a5d5ca7ff0299564cc557",
-      "url_zip": "https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.2/YKT-Holding_1.0.2_x64-portatif.zip",
-      "sha256_zip": "bcd1173300b494b7470de37b5127b932882ed5dd419ec6183a9bcb86fca6f5be"
+      "url": "https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-setup.exe",
+      "sha256": "1e643b7850945e570539ea5e38f6e610452f4c75219d35c924a2a142456cf959",
+      "url_zip": "https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-portatif.zip",
+      "sha256_zip": "eec140b191d1a1f17ef4c61104f3106ad1c024891ff9e635b4b3e7789e25c819"
     }
   }
 }
