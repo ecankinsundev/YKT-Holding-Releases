@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.0.3</code> (2026-11-20) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.3">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.0.4</code> (2026-11-20) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.0.4">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.0.3)
+## İndirme (v1.0.4)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.3_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-setup.exe) | `1e643b7850945e570539ea5e38f6e610452f4c75219d35c924a2a142456cf959` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.3_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/YKT-Holding_1.0.3_x64-portatif.zip) | `eec140b191d1a1f17ef4c61104f3106ad1c024891ff9e635b4b3e7789e25c819` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.3/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.0.4_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.4/YKT-Holding_1.0.4_x64-setup.exe) | `6ce3613220b6635710d34d790aa766d90646dd7a3904039140facd8f1ec3b3c8` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.0.4_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.4/YKT-Holding_1.0.4_x64-portatif.zip) | `66d8b2b7129de77db7c940bee8076c2bb794630ecf7fa2f18a2859a74cbe07dc` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.0.4/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.0.3_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "1e643b7850945e570539ea5e38f6e610452f4c75219d35c924a2a142456cf959"
+> (Get-FileHash .\YKT-Holding_1.0.4_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "6ce3613220b6635710d34d790aa766d90646dd7a3904039140facd8f1ec3b3c8"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.0.3_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.0.4_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.0.3_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.0.4_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -89,13 +89,12 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.0.3)
+## Mevcut Sürümde Neler Var? (v1.0.4)
 
 ### Yenilikler ve Duzeltmeler
-- **Otomatik Butce Kalibrasyonu & Sakin Arayuz:** `ykt butce` artik kalibrasyonsuz taze kurulumda hata vermez, oturum verilerini sessizce tarar ve ilk gercek Claude Code `rate_limit_event` olcumuyle kendi tavanini otomatik kalibre eder; `%0` / `%5` alti dusuk yuzde olcumleri mevcut gecerli tavani bozmaz (`HAFTA_ESIGI = 5.0`). Calisan dongusu kapaliyken arayuz arka planda 15 dakikada bir sessizce `ykt butce` calistirir. Ust seritteki ve `Kullanim` / `Ayarlar > Kota ve butce` ekranlarindaki sari kalibrasyon uyarilari kaldirildi; elle kalibrasyon `Ayarlar > Kota ve butce` altinda istege bagli acilir bolume (`Elle kalibrasyon (istege bagli)`) alindi.
-- **Sade Ust Serit:** Ust seritteki sabit 3'lu butce/limit cubuklari kaldirildi (tum limitler soldaki `Kullanim` sekmesinde). Ust serit tek satirda yalniz onay/kosan/olay cipleri, `Sehir gorunumu` anahtari ve sehir gizliyken kalici `Kosan is: N  |  Patron onayi bekleyen: M  |  Ajan: K` ozet bilgisini gosterir.
-- **Sehir Gorunumu Gizliyken Varsayilan `Tahta | Konusmalar`:** `Sehir gorunumu` kapatildiginda (veya gizli tercihli acilista acik panel yoksa) ekran bos kalmaz; `Tahta` ve `Konusmalar` varsayilan olarak yan yana acilir, ozet bilgi satiri gorunmeye devam eder.
-- **`Projeler` ve `Tahta` Sekme Duzeltmesi:** Sol menude **`Projeler`**'e tiklamak dogrudan `Proje listesi` (`+ Yeni proje` ve proje kartlari) gorunumunu, **`Tahta`**'ya tiklamak ise Kanban is tahtasini acar.
+- **Sol Menu Ac/Kapa (Toggle):** Sol menude halihazirda ekranda acik/gorunur olan bir bolmeye (`Konusmalar`, `Tahta`, `Projeler`, `Ajani izle` kosan karti izlerken, `Kullanim`, `Hafiza`, `Tarayici`, `Ayarlar`) tekrar tiklandiginda o bolme kapatilir ve kalan bolmeler bosluk birakmadan tam alana genisler ([ekran.rs](crates/ykt-holding/src/ekran.rs)). `Tahta` acikken `Projeler`'e (veya tersine) tiklamak kapatmak yerine diger gorunume gecer; tam ekran modunda arka planda gizli kalan bir bolmeye tiklamak ise o bolmeyi one getirir.
+- **Sehir Gizliyken `Ofis` = Varsayilan `Tahta | Konusmalar` (Bos Ekran Yok):** `Sehir gorunumu` gizliyken sol menuden **`Ofis`** sekmesine tiklandiginda (veya gizli tercihli acilista / sehir gizlendiginde acik bolme yoksa) artik bos genel bakis ekrani yerine **`Tahta` (sol) ve `Konusmalar` (sag)** dogrudan yan yana acilir ([lib.rs](crates/ykt-holding/src/lib.rs)). Yalniz `Hepsini kapat` ile tum paneller kapatilirsa acilan genel bakis ekranina tek tik **`Tahta + Konusmalar ac`** dugmesi eklendi.
+- **Belirgin Kalici Durum Rozeti:** `Sehir gorunumu` gizliyken ust seritteki `Kosan is: N  |  Patron onayi bekleyen: M  |  Ajan: K` bilgi satiri belirgin cerceveli durum rozeti icinde surekli gorunur kalir ([ekran.rs](crates/ykt-holding/src/ekran.rs)).
 
 ---
 
