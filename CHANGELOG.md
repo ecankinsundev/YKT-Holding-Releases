@@ -1,5 +1,23 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.5.0 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **4'lu Sekme Kalabaliginin Kaldirilmasi -> Tek ve Net `Okunakli | Teknik` 2 Modlu Yapi:**
+  - Kart paneli ve `Konusmalar` icindeki kafa karistiran `Sohbet | Ham cikti` alt sekmeleri tamamen kaldirildi; tum uygulamada tek ve net **`Okunakli | Teknik`** kipi kullanilir ([ekran.rs](crates/ykt-holding/src/ekran.rs), [kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs), [konusmalar.rs](crates/ykt-holding/src/konusmalar.rs), [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
+  - **`Okunakli` Mod (Varsayilan — AgentSpace / Linear Tarzi Temiz Patron Gorunumu):**
+    - Yan terminal bolmesi, muhendislik dugmeleri (`Duzenle`, `Baska projeye tasi`, `Harcama`, `Kart diff`, `Motor`, `Devret`, `Push izni`) ve ham arac ciktilari tamamen gizlenir.
+    - Tek sutunlu ferah yerlesimde yalniz **`ISTENILEN IS`**, **`YAPILANLAR VE SONUC`** (kosarken ajanin sade Turkce canli guncellemeleri), varsa **`SORULAR VE ENGELLER`** ve **`SOHBET GECMISI`** (balon gorunumu) yer alir.
+    - Ekranin altinda her zaman gorunur sabit bir **`KARAR VE AKSIYON`** doku bulunur: acik karar secenekleri, yorum/talimat kutusu (`Gonder`, kosarken canli stdin teslimi) ve duruma uygun **`Onayla`**, **`Geri gonder`**, **`Iptal et`** dugmeleri.
+  - **`Teknik` Mod (Gercek Gomulu PowerShell ConPTY + Muhendislik Paneli):**
+    - Kartin calisma klasorunde (`cwd`) dogrudan **gercek etkilesimli Windows PowerShell ConPTY** oturumu acar; pencere boyutuna gore dinamik yeniden boyutlanir (`ResizePseudoConsole`) ve **5000 satir geri kaydirma** (scrollback) destekler ([konsol.rs](crates/ykt-core/src/konsol.rs), [konsol_ekran.rs](crates/ykt-holding/src/konsol_ekran.rs)).
+    - Ust arac cubugunda tek tikla **`Dis PowerShell`** (bagimsiz pencere), **`Claude (--resume)`** (guvenli `session_id` beyaz listesiyle dogrudan PowerShell satirina yazar; [sohbet.rs](crates/ykt-core/src/sohbet.rs)), kosan kartta **`Canli kaydi izle`** ve **`Yeniden baslat`** yer alir.
+    - Kart degistirildiginde veya panel kapatildiginda onceki kartin yerel PowerShell sureci otomatik kapatilir (surec birikmesi onlenir; [lib.rs](crates/ykt-holding/src/lib.rs)).
+- **Canli Coklu-Model Kota & Kesin Yerel Reset Saatleri (`Kullanim ve Limitler`):**
+  - `motor::kota_olayi` artik `rate_limit_event.rate_limit_info.unifiedWindows` altindaki **tum** pencereleri (`five_hour`, `seven_day`, Fable/overage `seven_day_overage_included`, `seven_day_sonnet`, `seven_day_opus` vb.) ayristirir; `butce::yaz_kota` mevcut gecerli pencereleri olcum zamaniyla koruyarak atomik birlestirir ([motor.rs](crates/ykt/src/motor.rs), [butce.rs](crates/ykt/src/butce.rs), [ykt-core/src/butce.rs](crates/ykt-core/src/butce.rs)).
+  - `ykt butce --canli --fable` secenegi ve **`Fable Dahil Olc`** dugmesi eklendi; normal `ykt butce --canli` hafif `haiku` yoklamasi yapip son kosulardaki taze ek havuzlari gercek kosu zamani damgasiyla birlestirir ([butce_canli.rs](crates/ykt/src/butce_canli.rs)).
+  - `Kullanim ve Limitler` ekraninda her pencere icin hem `%` hem kesin yerel reset tarih/saati + kalan sure (`Sifirlama: 21 Kas 21:10 (4 sa 30 dk)` / ileri sarilmissa `Tahmini sifirlama` / eskiyse `bayat`), altinda **`Model Bazli Haftalik Kullanim`** tablosu (`claude-fable-5-2` fiyat tanimli) ve Antigravity icin seffaf yerel sayac + rate-limit takibi gosterilir ([kullanim_ekran.rs](crates/ykt-holding/src/kullanim_ekran.rs)).
+
 ## v1.4.0 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler

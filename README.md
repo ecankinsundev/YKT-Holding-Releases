@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.4.0</code> (2026-11-21) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.4.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.5.0</code> (2026-11-21) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.5.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.4.0)
+## İndirme (v1.5.0)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.4.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.4.0/YKT-Holding_1.4.0_x64-setup.exe) | `1a3ebde35e65fdfa5955d9d4617eee55a58692bd911f92a8486380a952340887` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.4.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.4.0/YKT-Holding_1.4.0_x64-portatif.zip) | `9159c52450fe4555c30ec137d4fc7517a83728aa497b1e2fc6b2c608f8fbd431` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.4.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.5.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/YKT-Holding_1.5.0_x64-setup.exe) | `76e3944d48dba388f93028e24e124c66fe5d9034d46eae7bed04eb5c75d5fe01` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.5.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/YKT-Holding_1.5.0_x64-portatif.zip) | `f864184efe6a6fcbfc588b2dc71efc41e353eed348e16ff385647a48ca150abc` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.4.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "1a3ebde35e65fdfa5955d9d4617eee55a58692bd911f92a8486380a952340887"
+> (Get-FileHash .\YKT-Holding_1.5.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "76e3944d48dba388f93028e24e124c66fe5d9034d46eae7bed04eb5c75d5fe01"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.4.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.5.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.4.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.5.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,21 +90,23 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.4.0)
+## Mevcut Sürümde Neler Var? (v1.5.0)
 
 ### Yenilikler ve Duzeltmeler
-- **Secilebilir `Okunakli | Teknik` Anlati Kipi (`~/.ykt/arayuz-anlati.txt`):**
-  - Hem **Tahta** ust cubugundan, hem **Kart paneli** basligindan hem de **`Ayarlar > Makine ve surecler > Tema`** altindan tek tikla degistirilebilen kalici **`Okunakli | Teknik`** gorunum kipi eklendi ([lib.rs](crates/ykt-holding/src/lib.rs), [ekran.rs](crates/ykt-holding/src/ekran.rs), [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
-  - **Okunakli kip (varsayilan):** Tahta kartlarinda insan okunur baslik one cikar, kritik uyarilar (`takildi?`, `? karar`, bekleme nedeni) korunurken gurultulu teknik rozetler gizlenir; kart panelinde bos `"yok"` satirlari ve bos `Kart diff` satiri gizlenir; yeni acilan `Ajani izle` panelleri varsayilan **`Sohbet`** sekmesinde acilir ([kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs)).
-  - **Teknik kip:** Tahta kartlarinda tum rozet/maliyet/oncelik bilgisi gorunur, kart panelinde tum teknik ozet alanlari gorunur ve yeni acilan `Ajani izle` panelleri varsayilan **`Ham cikti`** sekmesinde acilir (`Terminal` sekme adi gercek ConPTY `Konsol` ile karismamasi icin **`Ham cikti`** olarak netlestirildi; [kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs), [konusmalar.rs](crates/ykt-holding/src/konusmalar.rs)).
-- **3 Saniyede Anlasilan Kart Yonetici Ozeti & Jargon Temizligi:**
-  - Kart panelinin en ustunde buyuk insan okunur baslik + kucuk soluk kart kodu ve 4 satirlik sade yonetici ozeti (**`Neden acildi`**, **`Sorumlu`**, **`Durum`**, **`Senden ne bekleniyor`**) yer alir ([ekran.rs](crates/ykt-holding/src/ekran.rs), [sohbet.rs](crates/ykt-core/src/sohbet.rs)).
-  - `(kartin Istek bolumu)`, `(AJ4)`, `engel: sinif yok` gibi ic jargonlar ve henuz onay asamasina gelmemis kartlardaki yersiz `"Son kontrol adimlari bolumu bos"` uyarisi kaldirildi ([onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
-- **Karar & Onay Mekanizmasi Duzeltmeleri:**
-  - Acik bir `karar` sorusu olan kartta secenek secilmeden kartin kapatilmasi engellendi: cekirdek `sohbet_yaz` reddeder ([kart_yaz.rs](crates/ykt-core/src/kart_yaz.rs)), kart paneli `Onayla` dugmesini gizler ve sol onay paneli **`Karar ver`** gosterir ([onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
-  - `butce-durdu` durumundaki kartlarin dugmesiz kalmasi giderildi (`Geri gonder (bekliyor)` ve `Iptal et` eklendi).
-- **Ayarlar > Haftalik Otomatik Durum Raporu Anahtari:**
-  - **`Ayarlar > Kota ve butce`** altina **`Haftalik otomatik durum raporu`** ac/kapa anahtari (`rapor_dongu`, varsayilan **acik**) eklendi; `<kok>/ykt.json` (ve varsa `ajans.json`) dosyasina kaydedilir ([ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
+- **4'lu Sekme Kalabaliginin Kaldirilmasi -> Tek ve Net `Okunakli | Teknik` 2 Modlu Yapi:**
+  - Kart paneli ve `Konusmalar` icindeki kafa karistiran `Sohbet | Ham cikti` alt sekmeleri tamamen kaldirildi; tum uygulamada tek ve net **`Okunakli | Teknik`** kipi kullanilir ([ekran.rs](crates/ykt-holding/src/ekran.rs), [kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs), [konusmalar.rs](crates/ykt-holding/src/konusmalar.rs), [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
+  - **`Okunakli` Mod (Varsayilan — AgentSpace / Linear Tarzi Temiz Patron Gorunumu):**
+    - Yan terminal bolmesi, muhendislik dugmeleri (`Duzenle`, `Baska projeye tasi`, `Harcama`, `Kart diff`, `Motor`, `Devret`, `Push izni`) ve ham arac ciktilari tamamen gizlenir.
+    - Tek sutunlu ferah yerlesimde yalniz **`ISTENILEN IS`**, **`YAPILANLAR VE SONUC`** (kosarken ajanin sade Turkce canli guncellemeleri), varsa **`SORULAR VE ENGELLER`** ve **`SOHBET GECMISI`** (balon gorunumu) yer alir.
+    - Ekranin altinda her zaman gorunur sabit bir **`KARAR VE AKSIYON`** doku bulunur: acik karar secenekleri, yorum/talimat kutusu (`Gonder`, kosarken canli stdin teslimi) ve duruma uygun **`Onayla`**, **`Geri gonder`**, **`Iptal et`** dugmeleri.
+  - **`Teknik` Mod (Gercek Gomulu PowerShell ConPTY + Muhendislik Paneli):**
+    - Kartin calisma klasorunde (`cwd`) dogrudan **gercek etkilesimli Windows PowerShell ConPTY** oturumu acar; pencere boyutuna gore dinamik yeniden boyutlanir (`ResizePseudoConsole`) ve **5000 satir geri kaydirma** (scrollback) destekler ([konsol.rs](crates/ykt-core/src/konsol.rs), [konsol_ekran.rs](crates/ykt-holding/src/konsol_ekran.rs)).
+    - Ust arac cubugunda tek tikla **`Dis PowerShell`** (bagimsiz pencere), **`Claude (--resume)`** (guvenli `session_id` beyaz listesiyle dogrudan PowerShell satirina yazar; [sohbet.rs](crates/ykt-core/src/sohbet.rs)), kosan kartta **`Canli kaydi izle`** ve **`Yeniden baslat`** yer alir.
+    - Kart degistirildiginde veya panel kapatildiginda onceki kartin yerel PowerShell sureci otomatik kapatilir (surec birikmesi onlenir; [lib.rs](crates/ykt-holding/src/lib.rs)).
+- **Canli Coklu-Model Kota & Kesin Yerel Reset Saatleri (`Kullanim ve Limitler`):**
+  - `motor::kota_olayi` artik `rate_limit_event.rate_limit_info.unifiedWindows` altindaki **tum** pencereleri (`five_hour`, `seven_day`, Fable/overage `seven_day_overage_included`, `seven_day_sonnet`, `seven_day_opus` vb.) ayristirir; `butce::yaz_kota` mevcut gecerli pencereleri olcum zamaniyla koruyarak atomik birlestirir ([motor.rs](crates/ykt/src/motor.rs), [butce.rs](crates/ykt/src/butce.rs), [ykt-core/src/butce.rs](crates/ykt-core/src/butce.rs)).
+  - `ykt butce --canli --fable` secenegi ve **`Fable Dahil Olc`** dugmesi eklendi; normal `ykt butce --canli` hafif `haiku` yoklamasi yapip son kosulardaki taze ek havuzlari gercek kosu zamani damgasiyla birlestirir ([butce_canli.rs](crates/ykt/src/butce_canli.rs)).
+  - `Kullanim ve Limitler` ekraninda her pencere icin hem `%` hem kesin yerel reset tarih/saati + kalan sure (`Sifirlama: 21 Kas 21:10 (4 sa 30 dk)` / ileri sarilmissa `Tahmini sifirlama` / eskiyse `bayat`), altinda **`Model Bazli Haftalik Kullanim`** tablosu (`claude-fable-5-2` fiyat tanimli) ve Antigravity icin seffaf yerel sayac + rate-limit takibi gosterilir ([kullanim_ekran.rs](crates/ykt-holding/src/kullanim_ekran.rs)).
 
 ---
 
