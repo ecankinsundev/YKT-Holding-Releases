@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.6.0</code> (2026-11-21) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.6.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.7.0</code> (2026-11-21) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.7.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.6.0)
+## İndirme (v1.7.0)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.6.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/YKT-Holding_1.6.0_x64-setup.exe) | `0489f46fabba45b914523ba9e1cce3b74feb8b9fa6c7853ad24b1dbc18b4f794` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.6.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/YKT-Holding_1.6.0_x64-portatif.zip) | `c90df7c16ce8078f45d7c663ee104703277019490225d18f3ed0bfd4ef8e61ed` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.7.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.7.0/YKT-Holding_1.7.0_x64-setup.exe) | `b7194386d128236720bf34b221a3a5a59e6585a62cad678c5d7d7cf7d70711cf` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.7.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.7.0/YKT-Holding_1.7.0_x64-portatif.zip) | `4df93afaf904a4dd226d523eaa4aad0bedaa679876a67af88f9f767c935a0a3c` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.7.0/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.6.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "0489f46fabba45b914523ba9e1cce3b74feb8b9fa6c7853ad24b1dbc18b4f794"
+> (Get-FileHash .\YKT-Holding_1.7.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "b7194386d128236720bf34b221a3a5a59e6585a62cad678c5d7d7cf7d70711cf"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.6.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.7.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.6.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.7.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,24 +90,20 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.6.0)
+## Mevcut Sürümde Neler Var? (v1.7.0)
 
 ### Yenilikler ve Duzeltmeler
-- **Hibrit Gercek Terminal & Tek Tikla Oturumu Devral (`ykt kosu izle` + `devral` / `geri-ver`):**
-  - Ortak stream-json bicimleyici `ykt-core::kosu_akis` modulune tasindi ve **`ykt kosu izle <ID> [--takip]`** CLI alt komutu eklendi; `Teknik` kipteki gercek gomulu PowerShell artik ham JSONL yerine renkli, Claude CLI tarzinda okunakli canli cikti gosterir (`Ctrl+C` ile temizce `PS>` satirina doner; raw ESC/kontrol kacislari ve gizli veriler temizlenir).
-  - Kosan/bekleyen Claude kartlarina tek tikla **`Oturumu Devral (Claude)`** ve **`Ajana geri ver (Baslat)`** eklendi: ajan guvenle durdurulur, yalitim worktree'si korunur, `devralan: patron` kilidi cift calisma ve `cevapla` cakismasini engeller, PowerShell ortami tum `AJANS_*` / `YKT_*` degiskenlerinden arindirilir ve `Ajana geri ver` acik terminali kapatip ajana kaldigi oturumdan devam etmesini soyler.
-- **Silikon Vadisi 2.5D Kampus Peyzaji (`izometrik.rs`):**
-  - Gereksiz/sahte bina eklenmeden yalniz gercek holding binalarinin cevresine Apple Park / Bay View tarzinda pahli tas avlu meydani, yuruyus yollari, mimari cim adalari, yansimali havuz, 3 farkli 2.5D agac/cit stili (Kaliforniya selvisi, zeytin/mese taci, saksili simsir), ahsap avlu banklari ve gece sicak isik halkali yol lambalari eklendi (Gece & Gunduz palet uyumlu, 4 kamera acisinda tam derinlik siralamali, bosta **0 FPS**).
-- **Guvenli Gelistiriciye Bildir (`ekinsun@yktera.com` + Ekran Goruntusu):**
-  - `Ayarlar > Hakkinda > Gelistiriciye bildir` her zaman etkin hale getirildi; yorum kutusu, dosya secici (`GetOpenFileNameW`), panodan yapistirma (`CF_DIB`) ve surukle-birak ile en cok 3 ekran goruntusu eklenebilir.
-  - Guvenlik kapisi yalniz **PNG, JPG, JPEG, WEBP** kabul eder (`<= 5 MB` okuma oncesi sinir, symlink reddi, magic-byte + boyut `<= 8192px` dogrulama, EXIF/tEXt/COM ve polyglot son-ek temizligi, PNG piksel yeniden kodlama, sabit `ekran-N` adlandirma, CRLF baslik temizligi ve sifir gomulu sir).
-- **Opsiyonel Otomatik Guncelleme & Surum Notlu Bildirim:**
-  - `Ayarlar > Surecler` ve `Ayarlar > Hakkinda` altina **`Otomatik guncelle`** anahtari eklendi (varsayilan kapali). Acikken yeni surum resmi HTTPS kaynaktan indirilir, SHA-256 iki kez (yazarken ve baslatmadan once) dogrulanir ve kosan isler bitince otomatik kurulur. Kapaliyken ust seritte **`Yeni surum mevcut`** bildirimiyle kisa degisiklik ozeti + **`Indir ve kur`** / **`Sonra`** dugmeleri gosterilir.
-- **Kurulu Tum Motorlar & Antigravity Kotalari (`Kullanim` + `Ayarlar > Butce`):**
-  - `Kullanim ve Limitler` ve `Ayarlar > Butce` ekranlari artik yalniz Claude'u degil, `motorlar-onbellek.json`'daki **kurulu tum motorlari** (Claude, Antigravity, kuruluysa Ollama ve Gecit) gosterir; Antigravity icin gunluk havuz sayaclari, UTC sifirlama geri sayimi, aktif rate-limit bekleme kartlari ve elle Antigravity kota/sifirlama kaydi eklendi.
-- **Ayarlar Alt Oge Hiyerarsisi + Ust Ogeyi Kapatma & 1 Cumlelik Onay Ozeti:**
-  - Ayarlar sol menusunde ust gruplar acik/kapali oku (`▾`/`▸`) ve vurgu seridiyle, alt ogeler ise dikey agac cizgisi + girintiyle net bicimde ayrildi; acik ust gruba tekrar tiklandiginda grup kapanip **Ayarlar Ana Sayfasi** kart gorunumune doner.
-  - Sol **Onay bekleyenler** panelinde artik teknik log satiri yerine kartin amacini anlatan **1 cumlelik sade ozet** gosterilir (`ENGEL:` ve acik kararlar oncelikli).
+- **Antigravity Canli Kota & Tam Gorunurluk (`ykt butce --canli` + `--agy`):**
+  - Resmi ve **0 token** tuketen `agy --output-format json -p="/usage"` komutu `butce_canli.rs` icine entegre edildi; her `ykt butce --canli` (ve yeni `--agy`) calismasinda `Gemini Models` ve `Claude and GPT models` (Haftalik + 5 Saatlik) kalan/kullanilan yuzdeleri ile kesin yerel sifirlama saatleri `durum/agy-kullanim.json` dosyasina atomik yazilir.
+  - `Kullanim ve Limitler` ve `Ayarlar > Kota ve butce` ekranlarina **`Canli olcum`** rozeti (yas ve `reset_time` tazelik denetimli) ile **`Antigravity Olc`** dugmesi eklendi; hata/zaman asimi durumunda son gecerli dosya korunur ve Claude olcumu kesintiye ugramaz.
+- **Fable 5.2 & Tum Antigravity Modellerinin Tam Gorunurlugu (`motor_secim.rs` + `modeller.json`):**
+  - Eski `Fable 5.1` etiketi **`Fable 5.2`** olarak guncellendi; tum model secicilerde (Kart Paneli, Ajan Sag-Tik Menusu, Ajan Ozellikleri, `Model havuzu`) **Claude Code** (`Fable 5.2`, `Opus 5.5`, `Sonnet 5.5`, `Haiku 5.5`) ve **Antigravity** (`AGY Neon (High)`, `AGY Neon (XHigh)`, `AGY Carbon`, `AGY Argon`, `AGY Hydrogen`, `AGY Flash 3.8`, `AGY Opus 5.5`, `AGY Sonnet 5.5`) gruplu ve acik bicimde listelenir.
+  - Ajan Ozellikleri acilir kutusundaki Antigravity model adlarindan tire silen hata giderildi; `sablonlar/modeller.json` kataloguna `agy-neon-xhigh` ve `agy-hydrogen-high` eklendi.
+- **Gelistiriciye Bildir Dogrudan E-posta API Arayuzu (`ekinsun@yktera.com`):**
+  - `Ayarlar > Hakkinda > Gelistiriciye bildir` altina acilir **`Dogrudan e-posta API ayari (Resend)`** bolumu eklendi: maskeli `BILDIRIM_EPOSTA_ANAHTAR` ve istege bagli `BILDIRIM_EPOSTA_KIMDEN` dar erisim izniyle (`~/.ykt/anahtarlar.json`, ajan ortamlarina asla verilmez) kaydedilip silinebilir, **`Test bildirimi gonder`** dugmesiyle tek tikla dogrulanabilir.
+  - `ykt-core::anahtar` tum kontrol karakterlerini (CRLF/null) reddeder; Resend 401/403/422 hata mesajlari anahtari ve ham yaniti asla sizdirmaz.
+- **Resimli Turkce Kullanici Kilavuzu PDF (`docs/YKT-Holding-Kullanim-Kilavuzu.pdf`):**
+  - "Sirket mi, Proje mi, Kart mi?" karar rehberi (sosyal medya hesabi yonetimi dahil 7 gercek hayat ornegi), 23 hazir ekip paketi, 2.5D ofis, `Okunakli | Teknik` hibrit terminal, canli kota ve K0 guvenlik kapisi ekran goruntuleriyle 10 sayfalik PDF olarak GitHub depolarina eklendi.
 
 ---
 

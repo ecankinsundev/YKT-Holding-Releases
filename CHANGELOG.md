@@ -1,5 +1,20 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.7.0 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **Antigravity Canli Kota & Tam Gorunurluk (`ykt butce --canli` + `--agy`):**
+  - Resmi ve **0 token** tuketen `agy --output-format json -p="/usage"` komutu `butce_canli.rs` icine entegre edildi; her `ykt butce --canli` (ve yeni `--agy`) calismasinda `Gemini Models` ve `Claude and GPT models` (Haftalik + 5 Saatlik) kalan/kullanilan yuzdeleri ile kesin yerel sifirlama saatleri `durum/agy-kullanim.json` dosyasina atomik yazilir.
+  - `Kullanim ve Limitler` ve `Ayarlar > Kota ve butce` ekranlarina **`Canli olcum`** rozeti (yas ve `reset_time` tazelik denetimli) ile **`Antigravity Olc`** dugmesi eklendi; hata/zaman asimi durumunda son gecerli dosya korunur ve Claude olcumu kesintiye ugramaz.
+- **Fable 5.2 & Tum Antigravity Modellerinin Tam Gorunurlugu (`motor_secim.rs` + `modeller.json`):**
+  - Eski `Fable 5.1` etiketi **`Fable 5.2`** olarak guncellendi; tum model secicilerde (Kart Paneli, Ajan Sag-Tik Menusu, Ajan Ozellikleri, `Model havuzu`) **Claude Code** (`Fable 5.2`, `Opus 5.5`, `Sonnet 5.5`, `Haiku 5.5`) ve **Antigravity** (`AGY Neon (High)`, `AGY Neon (XHigh)`, `AGY Carbon`, `AGY Argon`, `AGY Hydrogen`, `AGY Flash 3.8`, `AGY Opus 5.5`, `AGY Sonnet 5.5`) gruplu ve acik bicimde listelenir.
+  - Ajan Ozellikleri acilir kutusundaki Antigravity model adlarindan tire silen hata giderildi; `sablonlar/modeller.json` kataloguna `agy-neon-xhigh` ve `agy-hydrogen-high` eklendi.
+- **Gelistiriciye Bildir Dogrudan E-posta API Arayuzu (`ekinsun@yktera.com`):**
+  - `Ayarlar > Hakkinda > Gelistiriciye bildir` altina acilir **`Dogrudan e-posta API ayari (Resend)`** bolumu eklendi: maskeli `BILDIRIM_EPOSTA_ANAHTAR` ve istege bagli `BILDIRIM_EPOSTA_KIMDEN` dar erisim izniyle (`~/.ykt/anahtarlar.json`, ajan ortamlarina asla verilmez) kaydedilip silinebilir, **`Test bildirimi gonder`** dugmesiyle tek tikla dogrulanabilir.
+  - `ykt-core::anahtar` tum kontrol karakterlerini (CRLF/null) reddeder; Resend 401/403/422 hata mesajlari anahtari ve ham yaniti asla sizdirmaz.
+- **Resimli Turkce Kullanici Kilavuzu PDF (`docs/YKT-Holding-Kullanim-Kilavuzu.pdf`):**
+  - "Sirket mi, Proje mi, Kart mi?" karar rehberi (sosyal medya hesabi yonetimi dahil 7 gercek hayat ornegi), 23 hazir ekip paketi, 2.5D ofis, `Okunakli | Teknik` hibrit terminal, canli kota ve K0 guvenlik kapisi ekran goruntuleriyle 10 sayfalik PDF olarak GitHub depolarina eklendi.
+
 ## v1.6.0 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler
