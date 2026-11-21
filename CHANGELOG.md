@@ -1,5 +1,24 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.6.0 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **Hibrit Gercek Terminal & Tek Tikla Oturumu Devral (`ykt kosu izle` + `devral` / `geri-ver`):**
+  - Ortak stream-json bicimleyici `ykt-core::kosu_akis` modulune tasindi ve **`ykt kosu izle <ID> [--takip]`** CLI alt komutu eklendi; `Teknik` kipteki gercek gomulu PowerShell artik ham JSONL yerine renkli, Claude CLI tarzinda okunakli canli cikti gosterir (`Ctrl+C` ile temizce `PS>` satirina doner; raw ESC/kontrol kacislari ve gizli veriler temizlenir).
+  - Kosan/bekleyen Claude kartlarina tek tikla **`Oturumu Devral (Claude)`** ve **`Ajana geri ver (Baslat)`** eklendi: ajan guvenle durdurulur, yalitim worktree'si korunur, `devralan: patron` kilidi cift calisma ve `cevapla` cakismasini engeller, PowerShell ortami tum `AJANS_*` / `YKT_*` degiskenlerinden arindirilir ve `Ajana geri ver` acik terminali kapatip ajana kaldigi oturumdan devam etmesini soyler.
+- **Silikon Vadisi 2.5D Kampus Peyzaji (`izometrik.rs`):**
+  - Gereksiz/sahte bina eklenmeden yalniz gercek holding binalarinin cevresine Apple Park / Bay View tarzinda pahli tas avlu meydani, yuruyus yollari, mimari cim adalari, yansimali havuz, 3 farkli 2.5D agac/cit stili (Kaliforniya selvisi, zeytin/mese taci, saksili simsir), ahsap avlu banklari ve gece sicak isik halkali yol lambalari eklendi (Gece & Gunduz palet uyumlu, 4 kamera acisinda tam derinlik siralamali, bosta **0 FPS**).
+- **Guvenli Gelistiriciye Bildir (`ekinsun@yktera.com` + Ekran Goruntusu):**
+  - `Ayarlar > Hakkinda > Gelistiriciye bildir` her zaman etkin hale getirildi; yorum kutusu, dosya secici (`GetOpenFileNameW`), panodan yapistirma (`CF_DIB`) ve surukle-birak ile en cok 3 ekran goruntusu eklenebilir.
+  - Guvenlik kapisi yalniz **PNG, JPG, JPEG, WEBP** kabul eder (`<= 5 MB` okuma oncesi sinir, symlink reddi, magic-byte + boyut `<= 8192px` dogrulama, EXIF/tEXt/COM ve polyglot son-ek temizligi, PNG piksel yeniden kodlama, sabit `ekran-N` adlandirma, CRLF baslik temizligi ve sifir gomulu sir).
+- **Opsiyonel Otomatik Guncelleme & Surum Notlu Bildirim:**
+  - `Ayarlar > Surecler` ve `Ayarlar > Hakkinda` altina **`Otomatik guncelle`** anahtari eklendi (varsayilan kapali). Acikken yeni surum resmi HTTPS kaynaktan indirilir, SHA-256 iki kez (yazarken ve baslatmadan once) dogrulanir ve kosan isler bitince otomatik kurulur. Kapaliyken ust seritte **`Yeni surum mevcut`** bildirimiyle kisa degisiklik ozeti + **`Indir ve kur`** / **`Sonra`** dugmeleri gosterilir.
+- **Kurulu Tum Motorlar & Antigravity Kotalari (`Kullanim` + `Ayarlar > Butce`):**
+  - `Kullanim ve Limitler` ve `Ayarlar > Butce` ekranlari artik yalniz Claude'u degil, `motorlar-onbellek.json`'daki **kurulu tum motorlari** (Claude, Antigravity, kuruluysa Ollama ve Gecit) gosterir; Antigravity icin gunluk havuz sayaclari, UTC sifirlama geri sayimi, aktif rate-limit bekleme kartlari ve elle Antigravity kota/sifirlama kaydi eklendi.
+- **Ayarlar Alt Oge Hiyerarsisi + Ust Ogeyi Kapatma & 1 Cumlelik Onay Ozeti:**
+  - Ayarlar sol menusunde ust gruplar acik/kapali oku (`▾`/`▸`) ve vurgu seridiyle, alt ogeler ise dikey agac cizgisi + girintiyle net bicimde ayrildi; acik ust gruba tekrar tiklandiginda grup kapanip **Ayarlar Ana Sayfasi** kart gorunumune doner.
+  - Sol **Onay bekleyenler** panelinde artik teknik log satiri yerine kartin amacini anlatan **1 cumlelik sade ozet** gosterilir (`ENGEL:` ve acik kararlar oncelikli).
+
 ## v1.5.0 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler

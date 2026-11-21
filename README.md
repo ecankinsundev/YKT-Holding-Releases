@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.5.0</code> (2026-11-21) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.5.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.6.0</code> (2026-11-21) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.6.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.5.0)
+## İndirme (v1.6.0)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.5.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/YKT-Holding_1.5.0_x64-setup.exe) | `76e3944d48dba388f93028e24e124c66fe5d9034d46eae7bed04eb5c75d5fe01` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.5.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/YKT-Holding_1.5.0_x64-portatif.zip) | `f864184efe6a6fcbfc588b2dc71efc41e353eed348e16ff385647a48ca150abc` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.5.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.6.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/YKT-Holding_1.6.0_x64-setup.exe) | `0489f46fabba45b914523ba9e1cce3b74feb8b9fa6c7853ad24b1dbc18b4f794` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.6.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/YKT-Holding_1.6.0_x64-portatif.zip) | `c90df7c16ce8078f45d7c663ee104703277019490225d18f3ed0bfd4ef8e61ed` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.6.0/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.5.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "76e3944d48dba388f93028e24e124c66fe5d9034d46eae7bed04eb5c75d5fe01"
+> (Get-FileHash .\YKT-Holding_1.6.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "0489f46fabba45b914523ba9e1cce3b74feb8b9fa6c7853ad24b1dbc18b4f794"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.5.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.6.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.5.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.6.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,23 +90,24 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.5.0)
+## Mevcut Sürümde Neler Var? (v1.6.0)
 
 ### Yenilikler ve Duzeltmeler
-- **4'lu Sekme Kalabaliginin Kaldirilmasi -> Tek ve Net `Okunakli | Teknik` 2 Modlu Yapi:**
-  - Kart paneli ve `Konusmalar` icindeki kafa karistiran `Sohbet | Ham cikti` alt sekmeleri tamamen kaldirildi; tum uygulamada tek ve net **`Okunakli | Teknik`** kipi kullanilir ([ekran.rs](crates/ykt-holding/src/ekran.rs), [kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs), [konusmalar.rs](crates/ykt-holding/src/konusmalar.rs), [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
-  - **`Okunakli` Mod (Varsayilan — AgentSpace / Linear Tarzi Temiz Patron Gorunumu):**
-    - Yan terminal bolmesi, muhendislik dugmeleri (`Duzenle`, `Baska projeye tasi`, `Harcama`, `Kart diff`, `Motor`, `Devret`, `Push izni`) ve ham arac ciktilari tamamen gizlenir.
-    - Tek sutunlu ferah yerlesimde yalniz **`ISTENILEN IS`**, **`YAPILANLAR VE SONUC`** (kosarken ajanin sade Turkce canli guncellemeleri), varsa **`SORULAR VE ENGELLER`** ve **`SOHBET GECMISI`** (balon gorunumu) yer alir.
-    - Ekranin altinda her zaman gorunur sabit bir **`KARAR VE AKSIYON`** doku bulunur: acik karar secenekleri, yorum/talimat kutusu (`Gonder`, kosarken canli stdin teslimi) ve duruma uygun **`Onayla`**, **`Geri gonder`**, **`Iptal et`** dugmeleri.
-  - **`Teknik` Mod (Gercek Gomulu PowerShell ConPTY + Muhendislik Paneli):**
-    - Kartin calisma klasorunde (`cwd`) dogrudan **gercek etkilesimli Windows PowerShell ConPTY** oturumu acar; pencere boyutuna gore dinamik yeniden boyutlanir (`ResizePseudoConsole`) ve **5000 satir geri kaydirma** (scrollback) destekler ([konsol.rs](crates/ykt-core/src/konsol.rs), [konsol_ekran.rs](crates/ykt-holding/src/konsol_ekran.rs)).
-    - Ust arac cubugunda tek tikla **`Dis PowerShell`** (bagimsiz pencere), **`Claude (--resume)`** (guvenli `session_id` beyaz listesiyle dogrudan PowerShell satirina yazar; [sohbet.rs](crates/ykt-core/src/sohbet.rs)), kosan kartta **`Canli kaydi izle`** ve **`Yeniden baslat`** yer alir.
-    - Kart degistirildiginde veya panel kapatildiginda onceki kartin yerel PowerShell sureci otomatik kapatilir (surec birikmesi onlenir; [lib.rs](crates/ykt-holding/src/lib.rs)).
-- **Canli Coklu-Model Kota & Kesin Yerel Reset Saatleri (`Kullanim ve Limitler`):**
-  - `motor::kota_olayi` artik `rate_limit_event.rate_limit_info.unifiedWindows` altindaki **tum** pencereleri (`five_hour`, `seven_day`, Fable/overage `seven_day_overage_included`, `seven_day_sonnet`, `seven_day_opus` vb.) ayristirir; `butce::yaz_kota` mevcut gecerli pencereleri olcum zamaniyla koruyarak atomik birlestirir ([motor.rs](crates/ykt/src/motor.rs), [butce.rs](crates/ykt/src/butce.rs), [ykt-core/src/butce.rs](crates/ykt-core/src/butce.rs)).
-  - `ykt butce --canli --fable` secenegi ve **`Fable Dahil Olc`** dugmesi eklendi; normal `ykt butce --canli` hafif `haiku` yoklamasi yapip son kosulardaki taze ek havuzlari gercek kosu zamani damgasiyla birlestirir ([butce_canli.rs](crates/ykt/src/butce_canli.rs)).
-  - `Kullanim ve Limitler` ekraninda her pencere icin hem `%` hem kesin yerel reset tarih/saati + kalan sure (`Sifirlama: 21 Kas 21:10 (4 sa 30 dk)` / ileri sarilmissa `Tahmini sifirlama` / eskiyse `bayat`), altinda **`Model Bazli Haftalik Kullanim`** tablosu (`claude-fable-5-2` fiyat tanimli) ve Antigravity icin seffaf yerel sayac + rate-limit takibi gosterilir ([kullanim_ekran.rs](crates/ykt-holding/src/kullanim_ekran.rs)).
+- **Hibrit Gercek Terminal & Tek Tikla Oturumu Devral (`ykt kosu izle` + `devral` / `geri-ver`):**
+  - Ortak stream-json bicimleyici `ykt-core::kosu_akis` modulune tasindi ve **`ykt kosu izle <ID> [--takip]`** CLI alt komutu eklendi; `Teknik` kipteki gercek gomulu PowerShell artik ham JSONL yerine renkli, Claude CLI tarzinda okunakli canli cikti gosterir (`Ctrl+C` ile temizce `PS>` satirina doner; raw ESC/kontrol kacislari ve gizli veriler temizlenir).
+  - Kosan/bekleyen Claude kartlarina tek tikla **`Oturumu Devral (Claude)`** ve **`Ajana geri ver (Baslat)`** eklendi: ajan guvenle durdurulur, yalitim worktree'si korunur, `devralan: patron` kilidi cift calisma ve `cevapla` cakismasini engeller, PowerShell ortami tum `AJANS_*` / `YKT_*` degiskenlerinden arindirilir ve `Ajana geri ver` acik terminali kapatip ajana kaldigi oturumdan devam etmesini soyler.
+- **Silikon Vadisi 2.5D Kampus Peyzaji (`izometrik.rs`):**
+  - Gereksiz/sahte bina eklenmeden yalniz gercek holding binalarinin cevresine Apple Park / Bay View tarzinda pahli tas avlu meydani, yuruyus yollari, mimari cim adalari, yansimali havuz, 3 farkli 2.5D agac/cit stili (Kaliforniya selvisi, zeytin/mese taci, saksili simsir), ahsap avlu banklari ve gece sicak isik halkali yol lambalari eklendi (Gece & Gunduz palet uyumlu, 4 kamera acisinda tam derinlik siralamali, bosta **0 FPS**).
+- **Guvenli Gelistiriciye Bildir (`ekinsun@yktera.com` + Ekran Goruntusu):**
+  - `Ayarlar > Hakkinda > Gelistiriciye bildir` her zaman etkin hale getirildi; yorum kutusu, dosya secici (`GetOpenFileNameW`), panodan yapistirma (`CF_DIB`) ve surukle-birak ile en cok 3 ekran goruntusu eklenebilir.
+  - Guvenlik kapisi yalniz **PNG, JPG, JPEG, WEBP** kabul eder (`<= 5 MB` okuma oncesi sinir, symlink reddi, magic-byte + boyut `<= 8192px` dogrulama, EXIF/tEXt/COM ve polyglot son-ek temizligi, PNG piksel yeniden kodlama, sabit `ekran-N` adlandirma, CRLF baslik temizligi ve sifir gomulu sir).
+- **Opsiyonel Otomatik Guncelleme & Surum Notlu Bildirim:**
+  - `Ayarlar > Surecler` ve `Ayarlar > Hakkinda` altina **`Otomatik guncelle`** anahtari eklendi (varsayilan kapali). Acikken yeni surum resmi HTTPS kaynaktan indirilir, SHA-256 iki kez (yazarken ve baslatmadan once) dogrulanir ve kosan isler bitince otomatik kurulur. Kapaliyken ust seritte **`Yeni surum mevcut`** bildirimiyle kisa degisiklik ozeti + **`Indir ve kur`** / **`Sonra`** dugmeleri gosterilir.
+- **Kurulu Tum Motorlar & Antigravity Kotalari (`Kullanim` + `Ayarlar > Butce`):**
+  - `Kullanim ve Limitler` ve `Ayarlar > Butce` ekranlari artik yalniz Claude'u degil, `motorlar-onbellek.json`'daki **kurulu tum motorlari** (Claude, Antigravity, kuruluysa Ollama ve Gecit) gosterir; Antigravity icin gunluk havuz sayaclari, UTC sifirlama geri sayimi, aktif rate-limit bekleme kartlari ve elle Antigravity kota/sifirlama kaydi eklendi.
+- **Ayarlar Alt Oge Hiyerarsisi + Ust Ogeyi Kapatma & 1 Cumlelik Onay Ozeti:**
+  - Ayarlar sol menusunde ust gruplar acik/kapali oku (`▾`/`▸`) ve vurgu seridiyle, alt ogeler ise dikey agac cizgisi + girintiyle net bicimde ayrildi; acik ust gruba tekrar tiklandiginda grup kapanip **Ayarlar Ana Sayfasi** kart gorunumune doner.
+  - Sol **Onay bekleyenler** panelinde artik teknik log satiri yerine kartin amacini anlatan **1 cumlelik sade ozet** gosterilir (`ENGEL:` ve acik kararlar oncelikli).
 
 ---
 
