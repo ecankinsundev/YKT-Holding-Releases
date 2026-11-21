@@ -1,5 +1,14 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.1.0 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **3 Katmanli 2.5D Izometrik Cam Kule Ofis (`OfisKipi::Izometrik`, varsayilan):** Eski piksel-art haritanin yanina saf 2D `egui::Painter` vektor cizimiyle (3D motor / shader yok) yeni varsayilan **2.5D** Ofis gorunumu eklendi ([izometrik.rs](crates/ykt-holding/src/kampus/izometrik.rs)). Ust cubuktaki `2.5D` / `Klasik` secimi `~/.ykt/arayuz-ofis-kipi.txt` dosyasinda kalici saklanir; `Duzenle (E)` mevcut klasik izgara duzenleyicisine sorunsuz gecer.
+  - **Katman 1 (Dis Kampus):** Altin tacli cam kule (`YKT Merkez`) ve kat sayisina olcekli sirket pavyonlari, aktif/onay bekleyen kat isiklari, cam kopruler, yalniz gercek hedef degisiminde kopruden suzulen 2.5D ajan figuru + isik izi ve bina ustu tiklanabilir canli durum kartlari.
+  - **Katman 2 (Bina Ici 2.5D Kat Kesiti):** Binaya cift tiklandiginda `kampus.json` odalari cam bolmeli 2.5D kat kesiti olarak acilir (cok katli binalarda kat secici + alt hayalet levhalar); 6 `Durum` + ortogonal `uzak` hologram gorunumu ve `veri.kartlar` (`ust` / `test_edilen` / `test_karti`) uzerinden gercek delegasyon Bezier yaylari cizilir.
+  - **Katman 3 (Hizli Ajan Karti):** 2.5D gorunumde ajana sol tiklandiginda (HLD-AJS-0206 guncellemesi, Patron 2026-11-21) tuvali kapatmadan yaninda buzlu cam kontrol karti acilir: **`Canli Izle`** (binadan cikmadan `AjaniIzle` acar), **`Mesaj Yaz`**, **`Karti Ac`** ve **`Motor Degistir`** ([ajan_menu.rs](crates/ykt-holding/src/ajan_menu.rs)); ilk `Esc` karti, ikinci `Esc` binayi kapatir.
+- **Bosta 0 FPS Yeniden Cizim & WCAG AA Tema Uyumu:** 2.5D kipte kopru gecisi/kamera hareketi veya odakta kosan is yokken kampus kendi yeniden cizim istemez (`izometrik_cizim_araligi` -> `None`; bosta 0 FPS), aktif kopru gecisinde ~20 FPS (50 ms), odakta kosan iste ~8 Hz (125 ms) calisir. Gece ve Gunduz izometrik paletleri uygulama temasini izler ve WCAG AA (`>= 4.5:1`) kontrast testiyle kilitlidir.
+
 ## v1.0.4 (2026-11-20)
 
 ### Yenilikler ve Duzeltmeler
