@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.3.0</code> (2026-11-21) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.3.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.3.1</code> (2026-11-21) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.3.1">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.3.0)
+## İndirme (v1.3.1)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.3.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/YKT-Holding_1.3.0_x64-setup.exe) | `6ba83d8dc823789350d72c0bdb425f9be1c5df08ed9ac687d16e9d99f6167562` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.3.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/YKT-Holding_1.3.0_x64-portatif.zip) | `cdf04ad216eca281307a415e743da6d00700fe4dd7fd272e69d2c18417eb6fe6` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.3.1_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.1/YKT-Holding_1.3.1_x64-setup.exe) | `3db0b43b3475e014db1e377b59e3414290952177588c16fb1e69cf0a1b4f5925` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.3.1_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.1/YKT-Holding_1.3.1_x64-portatif.zip) | `73484b52b5db37eb8b7e43a4346491b2030f627e4616a5d171f6416543cbf557` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.1/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.3.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "6ba83d8dc823789350d72c0bdb425f9be1c5df08ed9ac687d16e9d99f6167562"
+> (Get-FileHash .\YKT-Holding_1.3.1_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "3db0b43b3475e014db1e377b59e3414290952177588c16fb1e69cf0a1b4f5925"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.3.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.3.1_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.3.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.3.1_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,22 +90,21 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.3.0)
+## Mevcut Sürümde Neler Var? (v1.3.1)
 
 ### Yenilikler ve Duzeltmeler
-- **Her Binada Sosyal / Takilmalik Alanlar & Bosta Ajan Davranisi:**
-  - Yeni olusturulan her binaya (`Islem::BinaEkle`) otomatik olarak **`Toplanti Odasi`** (`tur: "toplanti"`) ve **`Kahve & Dinlenme`** (`tur: "mutfak"`) odalari eklenir ([kampus_yaz.rs](crates/ykt-core/src/kampus_yaz.rs)).
-  - 2.5D kat kesitinde artik `mutfak`/`kahve` odalari **espresso bari + kafe masalari**, `dinlenme`/`lobi` odalari **L-koltuk + sehpa + ic mekan bitkisi**, `toplanti` odalari ise **oval cam masa + sandalyeler + is dagitiminda parlak holografik halka** ile cizilir ([izometrik.rs](crates/ykt-holding/src/kampus/izometrik.rs)).
-  - **Kideme Gore Masa Mimarisi & Rol/Skill Kisisel Esyalari:** Calisma masalari artik kademeye gore farklilasir (**Holding/GM:** altin seritli buyuk yonetici masasi, panoramik kavisli monitor ve pirinc lamba; **Proje Lideri:** L-bicimli yonetici masasi ve genis uclu monitor; **Uzman:** modern cift monitorlu studyo masasi) ve her kullanilan masanin uzerinde ajanin rol ve skill'lerine ozgu 2.5D kisisel esya (altin kupa/dosya, strateji kuresi, Kanban tableti, PCB devresi, guvenlik kalkani, test kupasi, mini sunucu kulesi, mobil telefon standi, kahve+mekanik klavye veya teknik kitaplar) yer alir.
-  - Isi olmayan (`Bosta` / `Uykuda`) ajanlar masalarinda sabit beklemek yerine binanin sosyal alanlarinda (`Kahve molasi`, `Dinleniyor`, `Lobide`) takilir; aktif is baslayinca masalarina yurur ([iso_hareket.rs](crates/ykt-holding/src/kampus/iso_hareket.rs)).
-- **Lider Is Dagitimi, Birebir Gorev Teslimi ve Lidere Danisma Hareketleri:**
-  - **Coklu is dagitimi (2+ alt kart):** Ekip lideri (`yonetici` / `holding-gm`) **`Toplanti Odasi`** masasi basina gecip isi dagitir (`Is dagitiyor`).
-  - **Tekli gorev verme (1 alt kart):** Ekip lideri dogrudan isi verdigi ajanin masasinin yanina giderek gorevi teslim eder (`Gorev veriyor -> <Ad>`).
-  - **Lidere soru / onay sorma (`SeniBekliyor` / `onay-bekliyor` / `engel`):** Soru/onay bekleyen ajan liderin odasina/masasinin yanina gidip ziyaretci noktasinda bekler (`Lidere soruyor`), lider ise odasinda kalir.
-  - Kat ici tum konum gecisleri koridordan yumusak yuruyusle animasyonlanir ve hedefe varinca yeniden **bosta 0 FPS** kuralina doner.
-- **Canli Claude Kota Olcumu (`ykt butce --canli`):**
-  - `Kullanim` ve `Ayarlar > Kota ve butce` sayfalarindaki **`Yenile`** dugmesi artik `ykt butce --canli` calistirarak 1 turluk hafif `haiku` sorgusuyla gercek Anthropic `rate_limit_event` yuzdelerini (`Haftalik` + `5 Saatlik` + sifirlanma saatleri) ve kalibrasyon tavanini otomatik ceker ([butce_canli.rs](crates/ykt/src/butce_canli.rs)); taze/kalibrasyonsuz kurulumda uygulama oturum basina bir kez otomatik kendini kalibre eder (`%0 / %?` takilmasi biter).
-- **Otomatik `sirket + masa` Esleme (`ev_masa_coz`):** `kadro.json` icinde tam `ev_masa` yolu yazmasa bile kisa `masa` kimligi ve `sirket` bilgisinden ajan otomatik olarak binasina ve masasina yerlestirilir, ayni masa silinmeye karsi korunur ([kampus.rs](crates/ykt-core/src/kampus.rs)).
+- **Sifir Surtunmeli Varsayilan Ajan Izinleri (Hem 0-dan Kurulum Hem `--yenile`):**
+  - `ykt kur` ve `ykt kur --yenile` artik ornek klasorundeki `<kok>/.claude/settings.json` dosyasina (kullanici-genel `~/.claude/settings.json` dosyasini ve YKT disi depolari etkilemeden; bozuk dosyayi ezmeden ve yedek alarak) kapsami daraltilmis `permissions.allow` (`Read`, `Glob`, `Grep`, `ykt` is akisi alt komutlari, yerel `git`, `cargo`, `npm test`, `pytest` — Bash ve PowerShell) ile `permissions.additionalDirectories` (`ornek`, `vault`, `kod`) kurallarini kullanicinin mevcut izin ve `deny`/`ask` tercihlerini ezmeden birlestirir ([kur.rs](crates/ykt/src/kur.rs)). Tum arac cagrilari yine once `ykt-guard.exe kapi` (PreToolUse, K0) kancasindan gecer.
+  - Ilk kurulumdaki calisma alani guveni (`guven_isaretle`) artik `kok` ve `app` yaninda `vault` klasorunu de `~/.claude.json` icinde guvenli isaretler (`kod` ust dizini ucuncu taraf repolari otomatik guvenmemek icin disarida tutulur).
+  - `guvenli` mod (`acceptEdits`) ek dizin listesine (`ek_dizinler`) `ayar.kod` klasoru de eklendi ([calisan.rs](crates/ykt/src/calisan.rs)).
+- **Haftalik Rapor & Temiz Kapanis Duzeltmeleri:**
+  - Haftalik durum raporu karti ve taslagi artik eski `ajans plan sapma` yerine `ykt plan sapma` komutunu kullanir ([rapor.rs](crates/ykt/src/rapor.rs)).
+  - Calisan dongusunun normal kapanisinda yarim kalan kosu yoksa (`idler.is_empty()`) `durum/olaylar.jsonl` icine sahte `exe-kapandi` alarmi yazilmaz ([calisan.rs](crates/ykt/src/calisan.rs)).
+- **0-dan Kurulum Sablon Temizligi:**
+  - Ilk sirket `CLAUDE.md` sablonundaki sahte `(ornek) ProjeAdi` satiri kaldirildi (haftalik rapor ajanlarinin olmayan `ProjeAdi` hakkinda soru sormasi onlendi) ve `sablonlar/ornek/kampus.json` icindeki her iki baslangic binasina **`Kahve & Dinlenme`** sosyal odasi eklendi.
+- **Okunabilir Ajan Akisi & Arayuz Dili:**
+  - `Ajani izle` -> **`Sohbet`** gorunumunde ajanin ve Patron'un mesajlari artik 300 karakterde kesilmez ve satir sonlari korunur (`Kopyala` dugmesiyle birlikte); arac hata sonuclari da genisletildi, boylece ajanin ne dedigini okumak icin `Terminal` gorunumune gecmeye gerek kalmaz ([kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs)).
+  - Arayuzdeki `nihai` ifadeleri (`Patron'un nihai testi`, `nihai surum degil` vb.) daha dogal **`Son kontrol`** / **`kararli surum`** ifadeleriyle degistirildi ([ekran.rs](crates/ykt-holding/src/ekran.rs), [onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
 
 ---
 

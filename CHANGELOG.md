@@ -1,5 +1,21 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.3.1 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **Sifir Surtunmeli Varsayilan Ajan Izinleri (Hem 0-dan Kurulum Hem `--yenile`):**
+  - `ykt kur` ve `ykt kur --yenile` artik ornek klasorundeki `<kok>/.claude/settings.json` dosyasina (kullanici-genel `~/.claude/settings.json` dosyasini ve YKT disi depolari etkilemeden; bozuk dosyayi ezmeden ve yedek alarak) kapsami daraltilmis `permissions.allow` (`Read`, `Glob`, `Grep`, `ykt` is akisi alt komutlari, yerel `git`, `cargo`, `npm test`, `pytest` — Bash ve PowerShell) ile `permissions.additionalDirectories` (`ornek`, `vault`, `kod`) kurallarini kullanicinin mevcut izin ve `deny`/`ask` tercihlerini ezmeden birlestirir ([kur.rs](crates/ykt/src/kur.rs)). Tum arac cagrilari yine once `ykt-guard.exe kapi` (PreToolUse, K0) kancasindan gecer.
+  - Ilk kurulumdaki calisma alani guveni (`guven_isaretle`) artik `kok` ve `app` yaninda `vault` klasorunu de `~/.claude.json` icinde guvenli isaretler (`kod` ust dizini ucuncu taraf repolari otomatik guvenmemek icin disarida tutulur).
+  - `guvenli` mod (`acceptEdits`) ek dizin listesine (`ek_dizinler`) `ayar.kod` klasoru de eklendi ([calisan.rs](crates/ykt/src/calisan.rs)).
+- **Haftalik Rapor & Temiz Kapanis Duzeltmeleri:**
+  - Haftalik durum raporu karti ve taslagi artik eski `ajans plan sapma` yerine `ykt plan sapma` komutunu kullanir ([rapor.rs](crates/ykt/src/rapor.rs)).
+  - Calisan dongusunun normal kapanisinda yarim kalan kosu yoksa (`idler.is_empty()`) `durum/olaylar.jsonl` icine sahte `exe-kapandi` alarmi yazilmaz ([calisan.rs](crates/ykt/src/calisan.rs)).
+- **0-dan Kurulum Sablon Temizligi:**
+  - Ilk sirket `CLAUDE.md` sablonundaki sahte `(ornek) ProjeAdi` satiri kaldirildi (haftalik rapor ajanlarinin olmayan `ProjeAdi` hakkinda soru sormasi onlendi) ve `sablonlar/ornek/kampus.json` icindeki her iki baslangic binasina **`Kahve & Dinlenme`** sosyal odasi eklendi.
+- **Okunabilir Ajan Akisi & Arayuz Dili:**
+  - `Ajani izle` -> **`Sohbet`** gorunumunde ajanin ve Patron'un mesajlari artik 300 karakterde kesilmez ve satir sonlari korunur (`Kopyala` dugmesiyle birlikte); arac hata sonuclari da genisletildi, boylece ajanin ne dedigini okumak icin `Terminal` gorunumune gecmeye gerek kalmaz ([kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs)).
+  - Arayuzdeki `nihai` ifadeleri (`Patron'un nihai testi`, `nihai surum degil` vb.) daha dogal **`Son kontrol`** / **`kararli surum`** ifadeleriyle degistirildi ([ekran.rs](crates/ykt-holding/src/ekran.rs), [onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
+
 ## v1.3.0 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler
