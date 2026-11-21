@@ -1,5 +1,21 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.4.0 (2026-11-21)
+
+### Yenilikler ve Duzeltmeler
+- **Secilebilir `Okunakli | Teknik` Anlati Kipi (`~/.ykt/arayuz-anlati.txt`):**
+  - Hem **Tahta** ust cubugundan, hem **Kart paneli** basligindan hem de **`Ayarlar > Makine ve surecler > Tema`** altindan tek tikla degistirilebilen kalici **`Okunakli | Teknik`** gorunum kipi eklendi ([lib.rs](crates/ykt-holding/src/lib.rs), [ekran.rs](crates/ykt-holding/src/ekran.rs), [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
+  - **Okunakli kip (varsayilan):** Tahta kartlarinda insan okunur baslik one cikar, kritik uyarilar (`takildi?`, `? karar`, bekleme nedeni) korunurken gurultulu teknik rozetler gizlenir; kart panelinde bos `"yok"` satirlari ve bos `Kart diff` satiri gizlenir; yeni acilan `Ajani izle` panelleri varsayilan **`Sohbet`** sekmesinde acilir ([kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs)).
+  - **Teknik kip:** Tahta kartlarinda tum rozet/maliyet/oncelik bilgisi gorunur, kart panelinde tum teknik ozet alanlari gorunur ve yeni acilan `Ajani izle` panelleri varsayilan **`Ham cikti`** sekmesinde acilir (`Terminal` sekme adi gercek ConPTY `Konsol` ile karismamasi icin **`Ham cikti`** olarak netlestirildi; [kosu_akis.rs](crates/ykt-holding/src/kosu_akis.rs), [konusmalar.rs](crates/ykt-holding/src/konusmalar.rs)).
+- **3 Saniyede Anlasilan Kart Yonetici Ozeti & Jargon Temizligi:**
+  - Kart panelinin en ustunde buyuk insan okunur baslik + kucuk soluk kart kodu ve 4 satirlik sade yonetici ozeti (**`Neden acildi`**, **`Sorumlu`**, **`Durum`**, **`Senden ne bekleniyor`**) yer alir ([ekran.rs](crates/ykt-holding/src/ekran.rs), [sohbet.rs](crates/ykt-core/src/sohbet.rs)).
+  - `(kartin Istek bolumu)`, `(AJ4)`, `engel: sinif yok` gibi ic jargonlar ve henuz onay asamasina gelmemis kartlardaki yersiz `"Son kontrol adimlari bolumu bos"` uyarisi kaldirildi ([onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
+- **Karar & Onay Mekanizmasi Duzeltmeleri:**
+  - Acik bir `karar` sorusu olan kartta secenek secilmeden kartin kapatilmasi engellendi: cekirdek `sohbet_yaz` reddeder ([kart_yaz.rs](crates/ykt-core/src/kart_yaz.rs)), kart paneli `Onayla` dugmesini gizler ve sol onay paneli **`Karar ver`** gosterir ([onay_paneli.rs](crates/ykt-holding/src/onay_paneli.rs)).
+  - `butce-durdu` durumundaki kartlarin dugmesiz kalmasi giderildi (`Geri gonder (bekliyor)` ve `Iptal et` eklendi).
+- **Ayarlar > Haftalik Otomatik Durum Raporu Anahtari:**
+  - **`Ayarlar > Kota ve butce`** altina **`Haftalik otomatik durum raporu`** ac/kapa anahtari (`rapor_dongu`, varsayilan **acik**) eklendi; `<kok>/ykt.json` (ve varsa `ajans.json`) dosyasina kaydedilir ([ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
+
 ## v1.3.1 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler
