@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.2.0</code> (2026-11-21) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.2.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.3.0</code> (2026-11-21) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.3.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.2.0)
+## İndirme (v1.3.0)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.2.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.2.0/YKT-Holding_1.2.0_x64-setup.exe) | `9bbd146b1f291ebecf4a7f0dc0311942d81842d03ab7dbf1a4ddf777ffbdd018` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.2.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.2.0/YKT-Holding_1.2.0_x64-portatif.zip) | `426fc6e8d9e92a3ebc1e2342585a5f3486471956e33b08db88b1868d4a69bd30` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.2.0/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.3.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/YKT-Holding_1.3.0_x64-setup.exe) | `6ba83d8dc823789350d72c0bdb425f9be1c5df08ed9ac687d16e9d99f6167562` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.3.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/YKT-Holding_1.3.0_x64-portatif.zip) | `cdf04ad216eca281307a415e743da6d00700fe4dd7fd272e69d2c18417eb6fe6` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.3.0/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.2.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "9bbd146b1f291ebecf4a7f0dc0311942d81842d03ab7dbf1a4ddf777ffbdd018"
+> (Get-FileHash .\YKT-Holding_1.3.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "6ba83d8dc823789350d72c0bdb425f9be1c5df08ed9ac687d16e9d99f6167562"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.2.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.3.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.2.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.3.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,18 +90,22 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.2.0)
+## Mevcut Sürümde Neler Var? (v1.3.0)
 
 ### Yenilikler ve Duzeltmeler
-- **2.5D Izometrik 4 Yonlu Kamera Dondurme (`< Sol` / `Sag >`, `Q` / `R`):** Hem dis kampuste hem bina ici 2.5D kat kesitinde 90° adimlarla 4 izometrik bakis acisi (`On 0°`, `Sag 90°`, `Arka 180°`, `Sol 270°`) eklendi ([izometrik.rs](crates/ykt-holding/src/kampus/izometrik.rs)). Binalar, cam kopruler, kopruden suzulen ajanlar, kat odalari, masalar, ajan figurleri ve poligon isabet testi aktif aciya gore gercek zamanli dondurulup derinlik siralanir.
-- **Hem 2.5D Hem Klasik Icin Yerinde Duzenleme ve 2.5D Bina Kozmetikleri (`Duzenle (E)`):**
-  - 2.5D gorunumde `Duzenle (E)` artik klasik kipe atlamadan dogrudan 2.5D uzerinde acilir.
-  - **Dis Kampus 2.5D Duzenleme:** Secili binayi yeniden adlandir, aktif kamera acisina gore ekrana uyumlu tasi (`Sola / Saga / Yukari / Asagi`, `tasima_deltasi`), `Geri al` ve `BinaKozmetik` ile her projenin/sirketin 2.5D mimarisini ozellestir (**Stil:** `Oto | Kule | Pavyon | Studyo`, **Vurgu:** `Oto | Camgobegi | Zumrut | Kehribar | Mor`, **Kat:** `Oto | 1..4`; [kampus_yaz.rs](crates/ykt-core/src/kampus_yaz.rs)). Merkez binasi (`YKT Merkez`) kozmetik/ad/silme degisikliklerine karsi korunur, secim ve kamera duzenleme boyunca korunur.
-  - **Bina Ici 2.5D Kat Duzenleme:** Odaya tiklayip secme (duzenleme acikken hizli ajan kartiyla cakismaz), `Otomatik / Elle` yerlesim gecisi, `+ Oda`, `Adlandir`, ekrana gore `Sola / Saga / Yukari / Asagi` tasima, `+ Masa`, `- Masa`, onayli `Oda sil` ve `Geri al`.
-- **`Klasik Piksel` Gorunumu ve Acik `Aydinlik / Karanlik` Modu `Ayarlar > Makine ve surecler > Tema` Altinda:**
-  - Varsayilan ofis gorunumu **2.5D Izometrik**'tir; ust cubuktaki `2.5D / Klasik` dugmeleri kaldirilip **`Ayarlar > Makine ve surecler > Tema`** altina tasindi (`2.5D Izometrik` / `Klasik Piksel`, `~/.ykt/arayuz-ofis-kipi.txt`; [ayarlar.rs](crates/ykt-holding/src/ayarlar.rs)).
-  - Ayni sayfada tum uygulamaya (2.5D Ofis dahil) uygulanan **`Gorunum modu (Aydinlik / Karanlik)`** secimi (`Gunduz`, `Gece`, `Otomatik`) belirgin baslik ve aciklamalarla netlestirildi.
-- **Sehir Gorunumu Aktifken Sabit `Tahta | Konusmalar` Gelmez:** `Sehir gorunumu` kapaliyken `Tahta | Konusmalar` yan yana acilmaya devam eder; `Sehir gorunumu` tekrar acildiginda ekranda yalniz bu varsayilan paneller varsa otomatik kapanir ve 2.5D Ofis engelsiz gorunur ([lib.rs](crates/ykt-holding/src/lib.rs)). Kullanicinin actigi `Hafiza` gibi baska paneller veri kaybi olmadan katlanir.
+- **Her Binada Sosyal / Takilmalik Alanlar & Bosta Ajan Davranisi:**
+  - Yeni olusturulan her binaya (`Islem::BinaEkle`) otomatik olarak **`Toplanti Odasi`** (`tur: "toplanti"`) ve **`Kahve & Dinlenme`** (`tur: "mutfak"`) odalari eklenir ([kampus_yaz.rs](crates/ykt-core/src/kampus_yaz.rs)).
+  - 2.5D kat kesitinde artik `mutfak`/`kahve` odalari **espresso bari + kafe masalari**, `dinlenme`/`lobi` odalari **L-koltuk + sehpa + ic mekan bitkisi**, `toplanti` odalari ise **oval cam masa + sandalyeler + is dagitiminda parlak holografik halka** ile cizilir ([izometrik.rs](crates/ykt-holding/src/kampus/izometrik.rs)).
+  - **Kideme Gore Masa Mimarisi & Rol/Skill Kisisel Esyalari:** Calisma masalari artik kademeye gore farklilasir (**Holding/GM:** altin seritli buyuk yonetici masasi, panoramik kavisli monitor ve pirinc lamba; **Proje Lideri:** L-bicimli yonetici masasi ve genis uclu monitor; **Uzman:** modern cift monitorlu studyo masasi) ve her kullanilan masanin uzerinde ajanin rol ve skill'lerine ozgu 2.5D kisisel esya (altin kupa/dosya, strateji kuresi, Kanban tableti, PCB devresi, guvenlik kalkani, test kupasi, mini sunucu kulesi, mobil telefon standi, kahve+mekanik klavye veya teknik kitaplar) yer alir.
+  - Isi olmayan (`Bosta` / `Uykuda`) ajanlar masalarinda sabit beklemek yerine binanin sosyal alanlarinda (`Kahve molasi`, `Dinleniyor`, `Lobide`) takilir; aktif is baslayinca masalarina yurur ([iso_hareket.rs](crates/ykt-holding/src/kampus/iso_hareket.rs)).
+- **Lider Is Dagitimi, Birebir Gorev Teslimi ve Lidere Danisma Hareketleri:**
+  - **Coklu is dagitimi (2+ alt kart):** Ekip lideri (`yonetici` / `holding-gm`) **`Toplanti Odasi`** masasi basina gecip isi dagitir (`Is dagitiyor`).
+  - **Tekli gorev verme (1 alt kart):** Ekip lideri dogrudan isi verdigi ajanin masasinin yanina giderek gorevi teslim eder (`Gorev veriyor -> <Ad>`).
+  - **Lidere soru / onay sorma (`SeniBekliyor` / `onay-bekliyor` / `engel`):** Soru/onay bekleyen ajan liderin odasina/masasinin yanina gidip ziyaretci noktasinda bekler (`Lidere soruyor`), lider ise odasinda kalir.
+  - Kat ici tum konum gecisleri koridordan yumusak yuruyusle animasyonlanir ve hedefe varinca yeniden **bosta 0 FPS** kuralina doner.
+- **Canli Claude Kota Olcumu (`ykt butce --canli`):**
+  - `Kullanim` ve `Ayarlar > Kota ve butce` sayfalarindaki **`Yenile`** dugmesi artik `ykt butce --canli` calistirarak 1 turluk hafif `haiku` sorgusuyla gercek Anthropic `rate_limit_event` yuzdelerini (`Haftalik` + `5 Saatlik` + sifirlanma saatleri) ve kalibrasyon tavanini otomatik ceker ([butce_canli.rs](crates/ykt/src/butce_canli.rs)); taze/kalibrasyonsuz kurulumda uygulama oturum basina bir kez otomatik kendini kalibre eder (`%0 / %?` takilmasi biter).
+- **Otomatik `sirket + masa` Esleme (`ev_masa_coz`):** `kadro.json` icinde tam `ev_masa` yolu yazmasa bile kisa `masa` kimligi ve `sirket` bilgisinden ajan otomatik olarak binasina ve masasina yerlestirilir, ayni masa silinmeye karsi korunur ([kampus.rs](crates/ykt-core/src/kampus.rs)).
 
 ---
 
