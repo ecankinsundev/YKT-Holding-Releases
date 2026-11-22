@@ -1,5 +1,26 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.2 (2026-11-22)
+
+### Yenilikler ve Duzeltmeler
+- **2.5D Cam Asansor, Ferah En Ust Kat Luks Yonetim Kati & Katlar Arasi Yonetici Ziyareti (`proje.rs`, `proje_yasam.rs`, `kampus.rs`, `ofis.rs`, `iso_hareket.rs`, `izometrik.rs`):**
+  - Her cok katli sirket binasinin **en ust kati daima Yonetim Kati'dir (`id: "yonetim"`, `ad: "Yonetim Kati"`, `katlar.last()`)**: tek yonetici varsa ust katta tek basina luks penthouse odasinda (`10x7` karo, gece-lacivert hali + cift seritli altin/camgobegi cerceve, strateji panosu, 2 kose salon bitkisi, misafir koltuklari, pirinc lamba), birden fazla yonetici varsa tumunun luks odalari ayni Yonetim Kati'nda (`8x6` karo) yer alir; alt proje katlarinda tek tek yonetici odasi acilmaz.
+  - Cok katli binalara sol omurgada 4 kamera acisina donen tiklanabilir **2.5D cam asansor safti** eklendi (`K1`/`K2`/`YK` gostergesi, yon oklari, bosta 0 FPS).
+  - Ust kattaki yonetici alt katta aktif is verirken asansorle inip ilgili personelin bireysel odasina yurur (`Teslim`), alt kattaki calisan soru/engel durumunda ust kattaki yoneticiye asansorle cikar (`Danis`); tek kaynakli deterministik ziyaret hesabiyla ajanlar asla iki katta birden klonlanmaz ve varista 0 FPS'e doner.
+  - `tema_tahmini` icindeki kisa (`<5` karakter, or. `"sla"`) anahtar kelimelerin ilgisiz proje adlarinda yanlis tema secmesi hatasi giderildi.
+- **Ctrl+V Panodan Dogrudan Gorsel Ekleme (`bildir.rs`, `ekran.rs`, `konusmalar.rs`, `sihirbaz.rs`, `lib.rs`):**
+  - Kart Paneli (`Okunakli` ve `Teknik`), `Konusmalar` (Grup/Ajan/Kurulus), Proje Sihirbazi Adim 2 ve `Gelistiriciye bildir` metin kutularinda `Ctrl+V` (`egui::Event::PasteImage` + Windows `CF_DIB` yedegi), `+ Gorsel` dugmesi ve surukle-birak ile dogrudan ekran goruntusu eklenebilir.
+  - Tum gorseller mevcut kati guvenlik boru hattindan (`<= 5 MB`, `<= 8192px`, symlink reddi, magic-byte + EXIF/polyglot temizligi + PNG yeniden kodlama, atomik yazim) gecerek `<kok>/durum/ekler/` altina kaydedilir; 32x32 onizleme cipi + `[x]` kaldirma sunulur ve gonderilmeden vazgecilen taslak gorselleri diskten otomatik temizlenir.
+- **Yonetici Model & Devir Politikasi + Efor Tavani (`ekip.rs`, `havuz.rs`, `motor.rs`, `politika.rs`, `pm.rs`, `proje.rs`, `agents/{yonetici,proje-lideri}.md`):**
+  - Kota dolmadikca tum yoneticiler (`rol == "yonetici"`) proje uzmanlik alanina gore **`claude / fable` (Fable 5.2)** (mimari, guvenlik/uyum, finans, gomulu/donanim, masaustu/oyun) veya **`antigravity / gemini-4-neon-high` (AGY Neon High)** (web, mobil, sosyal medya, icerik, pazarlama/SEO, satis/CRM, destek, veri/arastirma) olarak atanir.
+  - Yonetici kota devri **`Fable 5.2 <-> AGY Neon High`** olarak degisir; yalniz ikisinin de kotasi dolarsa **`Claude Opus 5.5`**'e duser (gizli kartlarda K0/Claude siniri korunur).
+  - Patron elle degistirmedikce otomatik efor, `proje politikasi` ve `ykt plan kartlar` WBS kartlari **en fazla `high`** ile sinirlanir; Patron'un kartta veya kadroda elle verdigi `xhigh`/`max` tercihleri korunur.
+- **Arka Planda Calisma & Windows Sistem Tepsisi + Sol Menu `Cikis` Dugmesi (`sistem/tepsi.rs`, `ekran.rs`, `lib.rs`, `main.rs`):**
+  - Sol menunun en altina **`Cikis`** dugmesi eklendi; normal guvenli kapatma sureci (`Sistem::kapat`, calisan ajan/taslak sorusu, cocuk temizligi) yalniz sol menu `Cikis` veya sistem tepsisi sag tik `Cikis` secildiginde yurutulur.
+  - Pencere carpisina (`X`) basildiginda uygulama kapatilmaz, sag alt Windows sistem tepsisine gizlenerek arka planda calismaya devam eder (`eframe::App::logic` ile gizliyken de olay/veri tazeleme, calisan dongusu izleme ve saglik/butce tiki surer); tepsi simgesine tikla `Goster`/`Gizle`, sag tik ile `Goster` / `Gizle (Tepsiye al)` / `Cikis` secilebilir, ikinci exe acilisi gizli pencereyi geri getirir.
+- **Konusmalar Vazgecilen Kurulus Filtresi & Grup Ayrimi (`konusmalar.rs`):**
+  - Kurmaktan vazgecilen (`durum: "iptal"`) proje kurulus taslaklari artik `Konusmalar` listesini kirletmez; grup listesi acikca **`OFIS VE SIRKETLER`** ve **`PROJELER`** basliklarina ayrildi.
+
 ## v1.8.1 (2026-11-22)
 
 ### Yenilikler ve Duzeltmeler

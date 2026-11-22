@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.1</code> (2026-11-22) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.1">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.2</code> (2026-11-22) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.2">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.1)
+## İndirme (v1.8.2)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.1_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.1/YKT-Holding_1.8.1_x64-setup.exe) | `5141a5a455319a87afaa9a6e3d8aed4ad5a9a29184c4e4d969d40754dcd2b2c1` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.1_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.1/YKT-Holding_1.8.1_x64-portatif.zip) | `265e3be78f1105b5d3f443004d7178c7982197d6f7ebf8098a34dbe7c21b2c04` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.1/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.2_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.2/YKT-Holding_1.8.2_x64-setup.exe) | `bdd18a10c326041510611bba66bfedc116ffedd2c9cdb69c851311f80a43135c` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.2_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.2/YKT-Holding_1.8.2_x64-portatif.zip) | `116019be3f8428b4966f8ecfe2766d5308c55c5045764fc8350834f97544124f` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.2/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.1_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "5141a5a455319a87afaa9a6e3d8aed4ad5a9a29184c4e4d969d40754dcd2b2c1"
+> (Get-FileHash .\YKT-Holding_1.8.2_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "bdd18a10c326041510611bba66bfedc116ffedd2c9cdb69c851311f80a43135c"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.1_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.2_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.1_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.2_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,24 +90,26 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.1)
+## Mevcut Sürümde Neler Var? (v1.8.2)
 
 ### Yenilikler ve Duzeltmeler
-- **Kampus ve 2.5D Ofis Mimari Degismezleri (`kampus.rs`, `kampus_yaz.rs`, `proje_yasam.rs`, `izometrik.rs`):**
-  - **1 Organizasyon = 1 Cok Katli Bina, 1 Proje = 1 Kat:** Ayni sirkete acilan her yeni proje artik ikinci bos bina olusturmaz; organizasyon binasinin (`tip: "alan"`) yeni bir kati (`id: <proje-slug>`) olarak acilir.
-  - **Zorunlu Kat Odalari:** Her proje katinda (a) diger odalardan gorsel olarak ayirt edilen **1 Yonetici Odasi** (`tur: "yonetici"`), (b) ekipteki her standart ajan icin **ayri 1 bireysel cam oda** (`tur: "kubik"`, oda basina 1 masa) ve rolune ozgu masa nesnesi, (c) bostaki ajanlarin dinlenmesi icin **1 Kahve & Dinlenme sosyal odasi** (`tur: "mutfak"`, 0 masa) olusturulur.
-  - Ambar/cok-masali tek oda uretimi ve `yk` alt-dizgisi gibi gevsek eslesmelerle normal odalarin Baskan Suiti'ne donusmesi hatasi (`baskan_odasi_mi`) giderildi; cok katli binada proje arsivleme/geri alma/silme islemleri `kampus.json` uzerine kalici kaydedilir.
-- **Proje Sihirbazi: Model/Kota Politikasi, 125-Skill Dinamik Roller ve Rol Sihirbazi (`ekip_uygunluk.rs`, `kurulus.rs`, `proje.rs`, `politika.rs`, `calisan.rs`, `sihirbaz.rs`):**
-  - Yaniltici eski *"Ekip hangi model seviyesinde calissin?"* / *"Butce ve model tercihi?"* sorusu 21 paket sablonundan ve planlayici suzgecinden kaldirildi; cift `(onerilen) (onerilen)` etiketi duzeltildi.
-  - Adim 4 (`Ekip`) icine **Model ve Kota Politikasi** karti eklendi: **`Ekip lideri secsin (onerilen)`** veya **`Tek tek ben seceyim`** (her uye icin 12-model secici, K0 `agy_kapi_hazir` korumali) + 3 kota devir secenegi (`Otomatik devir (Claude -> AGY)`, `AGY oncelikli (AGY -> Claude)`, `Devir kapali`). `elle` kipte `kadro.json` bireysel secimleri `motor-politikasi.json` tarafindan ezilmez; `devir_acik: false` tum proaktif/reaktif devir noktalarinda korunur.
-  - **125-Skill Dinamik Rol Onerileri & 15 Yerlesik Rol:** Adim 4 rol listesi projeye gore 125 skill'den dinamik rol onerir ve **`Tum roller (15)`** acilir listesiyle tum yerlesik rollere erisim saglar.
-  - **Yeni Sirkette de Etkin `+ Ozel rol` & Rol Sihirbazi:** Yeni sirket acarken bile `+ Ozel rol` etkindir (K0 guvenligi icin LLM/planlayici ciktisindan ayiklanir, yalniz kullanici sihirbazi uzerinden dogrulanarak kaydedilir). **Rol Sihirbazi** ile yaptirilmak istenen is yazildiginda 125 `SKILL.md` dosyasindan otomatik skill eslestirmesi yapilip rol taslagi doldurulur ve `Skill ara` ile ozellestirilebilir.
-  - Adim 2 (`Ne yapalim?`) icine dogrulamali **`Mevcut kod klasoru (istege bagli)`** alani eklendi.
-- **Paket ve Ilk Kart Akisi Duzeltmeleri (`masaustu.json`, `paket.rs`, `proje.rs`):**
-  - `sablonlar/paketler/masaustu.json` sabit `["dotnet", "node"]` makine etiketlerinden arindirildi (`[]`).
-  - Yeni proje ilk kartlari paralel yigilmak yerine sirali bagimlilik zinciriyle (`arastirma` -> `is-plani` -> `uygulama` -> `test`) ve dogru rol eslesmeleriyle olusturulur.
-- **Genel Mudur (GM) Adlandirma Temizligi (`marka.rs`, `tahta.rs`, `grup.rs`, `demir.rs`, `ekran.rs`, `konusmalar.rs`, `sihirbaz.rs`):**
-  - Arayuzde ve mesajlarda sabit kalan eski `"Demir"` kisi adi kaldirilarak **`Genel Mudur` / `GM`** (ve kadrodaki dinamik `holding-gm` adi) kullanilmaya baslandi; `marka::gm_mi` ile eski `onay: demir` kartlari ve `@demir` hitaplari geriye donuk tam uyumlu okunur.
+- **2.5D Cam Asansor, Ferah En Ust Kat Luks Yonetim Kati & Katlar Arasi Yonetici Ziyareti (`proje.rs`, `proje_yasam.rs`, `kampus.rs`, `ofis.rs`, `iso_hareket.rs`, `izometrik.rs`):**
+  - Her cok katli sirket binasinin **en ust kati daima Yonetim Kati'dir (`id: "yonetim"`, `ad: "Yonetim Kati"`, `katlar.last()`)**: tek yonetici varsa ust katta tek basina luks penthouse odasinda (`10x7` karo, gece-lacivert hali + cift seritli altin/camgobegi cerceve, strateji panosu, 2 kose salon bitkisi, misafir koltuklari, pirinc lamba), birden fazla yonetici varsa tumunun luks odalari ayni Yonetim Kati'nda (`8x6` karo) yer alir; alt proje katlarinda tek tek yonetici odasi acilmaz.
+  - Cok katli binalara sol omurgada 4 kamera acisina donen tiklanabilir **2.5D cam asansor safti** eklendi (`K1`/`K2`/`YK` gostergesi, yon oklari, bosta 0 FPS).
+  - Ust kattaki yonetici alt katta aktif is verirken asansorle inip ilgili personelin bireysel odasina yurur (`Teslim`), alt kattaki calisan soru/engel durumunda ust kattaki yoneticiye asansorle cikar (`Danis`); tek kaynakli deterministik ziyaret hesabiyla ajanlar asla iki katta birden klonlanmaz ve varista 0 FPS'e doner.
+  - `tema_tahmini` icindeki kisa (`<5` karakter, or. `"sla"`) anahtar kelimelerin ilgisiz proje adlarinda yanlis tema secmesi hatasi giderildi.
+- **Ctrl+V Panodan Dogrudan Gorsel Ekleme (`bildir.rs`, `ekran.rs`, `konusmalar.rs`, `sihirbaz.rs`, `lib.rs`):**
+  - Kart Paneli (`Okunakli` ve `Teknik`), `Konusmalar` (Grup/Ajan/Kurulus), Proje Sihirbazi Adim 2 ve `Gelistiriciye bildir` metin kutularinda `Ctrl+V` (`egui::Event::PasteImage` + Windows `CF_DIB` yedegi), `+ Gorsel` dugmesi ve surukle-birak ile dogrudan ekran goruntusu eklenebilir.
+  - Tum gorseller mevcut kati guvenlik boru hattindan (`<= 5 MB`, `<= 8192px`, symlink reddi, magic-byte + EXIF/polyglot temizligi + PNG yeniden kodlama, atomik yazim) gecerek `<kok>/durum/ekler/` altina kaydedilir; 32x32 onizleme cipi + `[x]` kaldirma sunulur ve gonderilmeden vazgecilen taslak gorselleri diskten otomatik temizlenir.
+- **Yonetici Model & Devir Politikasi + Efor Tavani (`ekip.rs`, `havuz.rs`, `motor.rs`, `politika.rs`, `pm.rs`, `proje.rs`, `agents/{yonetici,proje-lideri}.md`):**
+  - Kota dolmadikca tum yoneticiler (`rol == "yonetici"`) proje uzmanlik alanina gore **`claude / fable` (Fable 5.2)** (mimari, guvenlik/uyum, finans, gomulu/donanim, masaustu/oyun) veya **`antigravity / gemini-4-neon-high` (AGY Neon High)** (web, mobil, sosyal medya, icerik, pazarlama/SEO, satis/CRM, destek, veri/arastirma) olarak atanir.
+  - Yonetici kota devri **`Fable 5.2 <-> AGY Neon High`** olarak degisir; yalniz ikisinin de kotasi dolarsa **`Claude Opus 5.5`**'e duser (gizli kartlarda K0/Claude siniri korunur).
+  - Patron elle degistirmedikce otomatik efor, `proje politikasi` ve `ykt plan kartlar` WBS kartlari **en fazla `high`** ile sinirlanir; Patron'un kartta veya kadroda elle verdigi `xhigh`/`max` tercihleri korunur.
+- **Arka Planda Calisma & Windows Sistem Tepsisi + Sol Menu `Cikis` Dugmesi (`sistem/tepsi.rs`, `ekran.rs`, `lib.rs`, `main.rs`):**
+  - Sol menunun en altina **`Cikis`** dugmesi eklendi; normal guvenli kapatma sureci (`Sistem::kapat`, calisan ajan/taslak sorusu, cocuk temizligi) yalniz sol menu `Cikis` veya sistem tepsisi sag tik `Cikis` secildiginde yurutulur.
+  - Pencere carpisina (`X`) basildiginda uygulama kapatilmaz, sag alt Windows sistem tepsisine gizlenerek arka planda calismaya devam eder (`eframe::App::logic` ile gizliyken de olay/veri tazeleme, calisan dongusu izleme ve saglik/butce tiki surer); tepsi simgesine tikla `Goster`/`Gizle`, sag tik ile `Goster` / `Gizle (Tepsiye al)` / `Cikis` secilebilir, ikinci exe acilisi gizli pencereyi geri getirir.
+- **Konusmalar Vazgecilen Kurulus Filtresi & Grup Ayrimi (`konusmalar.rs`):**
+  - Kurmaktan vazgecilen (`durum: "iptal"`) proje kurulus taslaklari artik `Konusmalar` listesini kirletmez; grup listesi acikca **`OFIS VE SIRKETLER`** ve **`PROJELER`** basliklarina ayrildi.
 
 ---
 
