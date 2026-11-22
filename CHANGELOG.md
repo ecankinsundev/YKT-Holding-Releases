@@ -1,5 +1,24 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.1 (2026-11-22)
+
+### Yenilikler ve Duzeltmeler
+- **Kampus ve 2.5D Ofis Mimari Degismezleri (`kampus.rs`, `kampus_yaz.rs`, `proje_yasam.rs`, `izometrik.rs`):**
+  - **1 Organizasyon = 1 Cok Katli Bina, 1 Proje = 1 Kat:** Ayni sirkete acilan her yeni proje artik ikinci bos bina olusturmaz; organizasyon binasinin (`tip: "alan"`) yeni bir kati (`id: <proje-slug>`) olarak acilir.
+  - **Zorunlu Kat Odalari:** Her proje katinda (a) diger odalardan gorsel olarak ayirt edilen **1 Yonetici Odasi** (`tur: "yonetici"`), (b) ekipteki her standart ajan icin **ayri 1 bireysel cam oda** (`tur: "kubik"`, oda basina 1 masa) ve rolune ozgu masa nesnesi, (c) bostaki ajanlarin dinlenmesi icin **1 Kahve & Dinlenme sosyal odasi** (`tur: "mutfak"`, 0 masa) olusturulur.
+  - Ambar/cok-masali tek oda uretimi ve `yk` alt-dizgisi gibi gevsek eslesmelerle normal odalarin Baskan Suiti'ne donusmesi hatasi (`baskan_odasi_mi`) giderildi; cok katli binada proje arsivleme/geri alma/silme islemleri `kampus.json` uzerine kalici kaydedilir.
+- **Proje Sihirbazi: Model/Kota Politikasi, 125-Skill Dinamik Roller ve Rol Sihirbazi (`ekip_uygunluk.rs`, `kurulus.rs`, `proje.rs`, `politika.rs`, `calisan.rs`, `sihirbaz.rs`):**
+  - Yaniltici eski *"Ekip hangi model seviyesinde calissin?"* / *"Butce ve model tercihi?"* sorusu 21 paket sablonundan ve planlayici suzgecinden kaldirildi; cift `(onerilen) (onerilen)` etiketi duzeltildi.
+  - Adim 4 (`Ekip`) icine **Model ve Kota Politikasi** karti eklendi: **`Ekip lideri secsin (onerilen)`** veya **`Tek tek ben seceyim`** (her uye icin 12-model secici, K0 `agy_kapi_hazir` korumali) + 3 kota devir secenegi (`Otomatik devir (Claude -> AGY)`, `AGY oncelikli (AGY -> Claude)`, `Devir kapali`). `elle` kipte `kadro.json` bireysel secimleri `motor-politikasi.json` tarafindan ezilmez; `devir_acik: false` tum proaktif/reaktif devir noktalarinda korunur.
+  - **125-Skill Dinamik Rol Onerileri & 15 Yerlesik Rol:** Adim 4 rol listesi projeye gore 125 skill'den dinamik rol onerir ve **`Tum roller (15)`** acilir listesiyle tum yerlesik rollere erisim saglar.
+  - **Yeni Sirkette de Etkin `+ Ozel rol` & Rol Sihirbazi:** Yeni sirket acarken bile `+ Ozel rol` etkindir (K0 guvenligi icin LLM/planlayici ciktisindan ayiklanir, yalniz kullanici sihirbazi uzerinden dogrulanarak kaydedilir). **Rol Sihirbazi** ile yaptirilmak istenen is yazildiginda 125 `SKILL.md` dosyasindan otomatik skill eslestirmesi yapilip rol taslagi doldurulur ve `Skill ara` ile ozellestirilebilir.
+  - Adim 2 (`Ne yapalim?`) icine dogrulamali **`Mevcut kod klasoru (istege bagli)`** alani eklendi.
+- **Paket ve Ilk Kart Akisi Duzeltmeleri (`masaustu.json`, `paket.rs`, `proje.rs`):**
+  - `sablonlar/paketler/masaustu.json` sabit `["dotnet", "node"]` makine etiketlerinden arindirildi (`[]`).
+  - Yeni proje ilk kartlari paralel yigilmak yerine sirali bagimlilik zinciriyle (`arastirma` -> `is-plani` -> `uygulama` -> `test`) ve dogru rol eslesmeleriyle olusturulur.
+- **Genel Mudur (GM) Adlandirma Temizligi (`marka.rs`, `tahta.rs`, `grup.rs`, `demir.rs`, `ekran.rs`, `konusmalar.rs`, `sihirbaz.rs`):**
+  - Arayuzde ve mesajlarda sabit kalan eski `"Demir"` kisi adi kaldirilarak **`Genel Mudur` / `GM`** (ve kadrodaki dinamik `holding-gm` adi) kullanilmaya baslandi; `marka::gm_mi` ile eski `onay: demir` kartlari ve `@demir` hitaplari geriye donuk tam uyumlu okunur.
+
 ## v1.8.0 (2026-11-22)
 
 ### Yenilikler ve Duzeltmeler
