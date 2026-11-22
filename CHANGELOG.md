@@ -1,5 +1,27 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.0 (2026-11-22)
+
+### Yenilikler ve Duzeltmeler
+- **Genisletilmis Holding Rol, Skill ve Paket Katalogu (17 Rol, 125 Skill, 28 Paket):**
+  - Holding kapsamini yazilim disi disiplinlerle dengeleyen **4 yeni rol** eklendi: `icerik-editoru`, `veri-analisti`, `operasyon-uzmani`, `hukuk-uyum-uzmani` (`agents/*.md`).
+  - **10 yeni dogrulanmis skill** (`115 -> 125`: finansal butce/nakit akisi, fatura/maliyet mutabakati, satis hunisi/teklif, CRM/musteri segmentasyonu, musteri destek/SLA, bilgi bankasi/SSS, performans reklam/kampanya, SEO icerik/anahtar kelime, video senaryo/storyboard, marka sesi/yayin takvimi) ve **5 yeni ekip paketi** (`23 -> 28`: `finans-muhasebe`, `satis-crm`, `musteri-destek`, `pazarlama-seo-reklam`, `video-medya-produksiyon`) eklendi.
+  - Agirlikli is odaklari olan **masaustu uygulamalar, mobil uygulama, mobil oyun ve sosyal medya yonetimi** paketleri (`masaustu.json`, `mobil-uygulama.json`, `mobil-oyun.json`, `sosyal-medya.json`) ve yonetici kapsam belgeleri (`agents/yonetici.md`, `agents/proje-lideri.md`) butce-maliyet bilincinde otomatik motor/model secim matrisiyle guclendirildi.
+- **Akilli IDF Ekip Onerici ve Maliyet-Etkin Motor Politikasi (`ekip.rs` + `ekip-onerileri.json`):**
+  - 28/28 alan-paket birebir eslesmesi, `is_turu` (`yazilim`, `donanim`, `surekli-operasyon`, `uyum-denetim`, `icerik-medya`, `analitik`) ve `kod_gerekli` siniflandirmasi ile dinamik IDF-agirlikli puanlama, deterministik esitlik kirici, siki kesinlik esigi ve hibrit coklu-alan birlestirme (`testci`/`guvenlik-testci` korunur) eklendi.
+  - `rol_maliyet_motoru` ile `guvenlik-testci` -> `Fable 5.2`, cekirdek kod rolleri -> `Opus 5.5`, yonetim/test/sistem -> `Sonnet 5.5`, arastirma/icerik/veri/hukuk/operasyon/tasarim -> `Antigravity` (`AGY Argon`/`Neon`) atayarak Claude kotasini korur; kod-disi 10 uzman rol `KAPISIZ_ROLLER` kapsaminda yalitimsiz da calisabilir (kod/donanim/guvenlik rolleri K0 kancasi veya git yalitimi ile korunmaya devam eder).
+- **Projeler Sayfasi: Yerel Dosya Yolu, Ayri Kaynak/Release Repo, 2-Kapsamli Yeniden Adlandirma ve Onay-Kapili Proje Silme (`proje_baglanti.rs`, `proje_yasam.rs`, `projeler.rs`):**
+  - Proje sayfasina **Adim 1 (Yerel dosya yolu)**, **Adim 2 (Kaynak kod reposu `origin`)** ve **Adim 3 (Ayri Release/Dagitim reposu `release`)** baglantilari eklendi; katı HTTPS/SSH URL dogrulamasi (bayrak/kimlik/CRLF reddi, `kaynak == yayin` engeli) ve mevcut `origin` uzerine sessiz yazmama korumasi uygulanir.
+  - **2-Kapsamli Yeniden Adlandirma:** **`Yalniz YKT Holding'de gorunen ad`** (varsayilan) ve **`Kaynak kod dahil gectigi her yer`** (zorunlu kuru tarama onizlemesi, kirli git agaci engeli, `.git`/`target`/`node_modules`/ikili/kilit dosyalarini atlama ve CRLF/LF koruma).
+  - **Onay-Kapili Dogrudan `Proje sil`:** Arsivleme zorunlulugu olmadan cift onay (proje adi yaz + basili tut); varsayilan olarak kaynak repo ve hafiza HARIC her seyi Geri Donusum Kutusuna (`ykt cop`) tasir. Varsayilan kapali iki opt-in onay kutusuyla istenirse (a) izin listesi/symlink/monorepo korumali kaynak repo ve/veya (b) yalniz bu projenin Vault hub klasoru (`20 Projeler/.../<proje>`) de Geri Donusum Kutusuna tasinabilir.
+- **Personel Ekrani: AI Model Secimi, Coklu-Proje/Holding Kapsami ve Yoneticiye Ozel Capraz Sirket Gorev Yetkisi (`kadro.rs`, `personel.rs`, `yonetim.rs`):**
+  - `Ayarlar > Ekip > Personel` ekraninda `holding-gm` dahil tum yapay zeka ajanlarinin motor/modeli dogrudan degistirilebilir (`insan` haric).
+  - Ajanlar mevcut kimlik ve hafizalari korunarak farkli projelere tasinabilir; **Tek proje**, **Secili projeler**, **Tum sirket**, **Secili sirketler** veya **Tum holding** kapsaminda calisabilir. `YKT Merkez` (`holding`) altinda ise alinan avukat/uzmanlar (or. 3 avukat) tum sirketlerin secilen projelerine atanabilir.
+  - Yalniz **sirket yoneticisi (`rol == "yonetici"`)** icin gorunen **`Baska sirketlere gorev verebilsin`** anahtari (`capraz_sirket_gorev` + istege bagli hedef sirketler) eklendi; diger rollerde sunucu ve arayuz katmaninda kesin engellidir.
+- **4-Havuz Butce-Koruyucu Capraz-Motor Kota Devri (`modeller.json`, `havuz.rs`, `devir.rs`, `calisan.rs`):**
+  - 4 ayri/hiyerarsik canli havuz (`claude-fable`, `claude-genel`, `agy-gemini`, `agy-claude`) tanimlandi: `Fable` dolunca Claude genel kotasini korumak icin once `AGY Neon High`, sonra `Claude Opus 5.5`, sonra `AGY Opus 5.5` devralir; `AGY Neon` dolunca `Fable` -> `Claude Opus 5.5` -> `AGY Opus 5.5` zinciri isler; `Claude genel` dolunca ust havuza bagli `Fable` da otomatik atlanir.
+  - Tek zorunlu gizlilik+K0 devre kesicisi (`gizli` kartlar asla `motor == "claude"` disina cikmaz), gizli anahtar maskeli devir ozeti, `agy-kullanim.json` + `havuz-kota.json` karamsar birlesimi ve kalici kart devri siniri (`AZAMI_KART_DEVRI = 6`) ile hem kosu oncesi proaktif hem kosu ortasi otomatik devir saglanir.
+
 ## v1.7.0 (2026-11-21)
 
 ### Yenilikler ve Duzeltmeler
