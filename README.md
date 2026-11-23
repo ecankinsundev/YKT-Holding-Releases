@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.6</code> (2026-11-23) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.6">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.7</code> (2026-11-23) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.7">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.6)
+## İndirme (v1.8.7)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.6_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.6/YKT-Holding_1.8.6_x64-setup.exe) | `9316a08100233a7a5141a59dcadd7d93e7dc772ba5963aa85d5760fe8c5a14f8` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.6_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.6/YKT-Holding_1.8.6_x64-portatif.zip) | `29e668df766804cbb3ea4ad4a57d17a05e6735ac7b073c037755b86d601e2cc8` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.6/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.7_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.7/YKT-Holding_1.8.7_x64-setup.exe) | `5d8b4c0d98bfb9a38021278ae598c4b2da62ff31898e63ccb3327d8be8994948` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.7_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.7/YKT-Holding_1.8.7_x64-portatif.zip) | `1ef7b8786642ced816f5f63c028edc8a690ec3206200f35558c9fb58083c19a7` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.7/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.6_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "9316a08100233a7a5141a59dcadd7d93e7dc772ba5963aa85d5760fe8c5a14f8"
+> (Get-FileHash .\YKT-Holding_1.8.7_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "5d8b4c0d98bfb9a38021278ae598c4b2da62ff31898e63ccb3327d8be8994948"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.6_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.7_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.6_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.7_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,16 +90,20 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.6)
+## Mevcut Sürümde Neler Var? (v1.8.7)
 
 ### Yenilikler ve Duzeltmeler
-- **Proje Baslatma ve Kapsam Kesfi Kapisi (`proje.rs`, `kurulus.rs`, `sihirbaz.rs`, `agents/yonetici.md`):**
-  - Yeni bir proje kuruldugunda artik ekip kartlari Patron'dan girdi ve onay almadan kendi basina kosmaya baslamaz.
-  - Her yeni projede **`<ONEK>-0001`** numarali ilk kart projenin **yoneticisine (`rol: yonetici`, `pm: kesif`, `onay: patron`, `cwd: <kok>`)** acilir; yonetici bu kartta uretim/kodlama/yayin yapmadan proje turune ve aciklamaya gore eksik kritik bilgileri (hedef platform/kanallar, erisim/hesap/kaynak, teslimat bicimi/ton, kapsam siniri, oncelik ve takvim) **2-4 secenekli onerilerle** (`(onerilen)` ilk sirada) Patron'a sorar.
-  - Sonraki tum ekip kartlari (`0002`, `0003`, ...) kendi bagimlilik zincirlerini indeks kaymasiz koruyarak **`<ONEK>-0001`'e bagimli** acilir ve baslamadan once kesif notundaki / hub notundaki Patron cevaplarini okumasi zorunlu kilinir; Patron kesif kartini cevaplayip onaylamadan hicbir ekip karti kosmaz.
-  - Kesif karti `cwd: <kok>` ile kod deposunda gereksiz bos worktree acmaz; Rapor `KANIT: TAM` + ters tirnakli `- Belge: \`...\`` bicimiyle kanit kapisindan dogrudan gecer.
-- **Temiz Worktree Kurtarma Duzeltmesi (`calisan.rs::kalinti_worktree`):**
-  - Sifir commitli veya bitmis/birlestirilmis **temiz ve ignore'suz** `.kart-wt` kalinti klasorlerinde Windows Geri Donusum Kutusu (`SHFileOperationW`) kilit/tasima hatasiyla kartlarin kalici `engel`e dusmesi giderildi: once resmi `git worktree remove` + `prune` denenir (dal korunur), gerekirse Geri Donusum yedegine dusulur ve iki hata birlikte raporlanir.
+- **2.5D Izometrik Oda Duvari Plaketleri ve Bina Cati Tabelalari (`kampus/izometrik.rs`):**
+  - Ic kat kesitinde odalarin onunde havada durup cok odali katlarda birbirine karisan zemin etiketleri kaldirilarak her odanin **on-sol cam duvarinin icine tam duvar egiminde gomulu 2.5D mimari plaket** (`oda_duvar_etiketi_ciz`) eklendi.
+  - Tek satira sigmayan uzun `ISIM - UNVAN` etiketleri `" - "` / `" · "` / `" / "` ya da en dengeli kelime sinirindan otomatik olarak **2 temiz satira bolunur** (`etiketi_ikiye_bol`, `metni_sigdir`), 0.5 px adimli font olcekleme (`font_adim`) ve dusuk zoom gorunurlugu ile komsu odalarla cakismaz.
+  - Dis bina gorunumlerinde sokak seviyesindeki yuzer isim rozeti kaldirilarak her binanin catisina celik destekli ve 4 kamera acisina uyumlu **2.5D mimari cati tabelasi** (`cati_tabelasi_ciz`) sabitlendi; bina durum kartlari tabelanin ustunde cakismadan konumlanir.
+- **Tam Ekran (Maximized) Baslangic (`main.rs`):**
+  - Uygulama sifirdan acildiginda dogrudan ekrani tamamen kaplayarak (`.with_maximized(true)`) acilir; pencere kucultuldugunde (Restore) son kaydedilen normal boyut/konuma (yoksa `1280x800`) doner.
+- **Eski Surum Metinleri, 17 Ajan Profili (`agents/*.md`) ve Sablon Temizligi:**
+  - `Tum ofis` grubundaki `"Demir'in yerine konusma planlayicisi"` basligi `"Ofis is planlayicisi"` olarak duzeltildi; arayuz, CLI, cekirdek mesajlari, 17 `agents/*.md` rol profili (`yonetici.md` ve `ux-tasarimcisi.md` tutarliligi dahil), `sablonlar/` ve `docs/KONUSMALAR.md` eski surum artiklarindan (`Demir`, `ajans`, `ajans.json`, `~/.ajans`, `cop.js`, ic kart kimlikleri) arindirildi.
+  - Tum dahili geriye uyumluluk sozlesmeleri (`~/.ajans`, `ajans.json`, `onay: demir`, `--kimden gm|demir`, `Demir otomatik onayi:` + `GM otomatik onayi:`, `kapilar.json` regex desenleri) korundu.
+- **K0 Guvenlik Kapisi `ykt cop` Sertlestirmesi (`ykt-guard/src/kapi.rs`):**
+  - `kesin_segment` ve `yazan_komut()` icinde yalniz `ajans cop` degil, `ykt cop` / `ykt.exe cop` / `ykt --kok <yol> cop` komutlari da yazma hedefi olarak denetlenerek kart siniri ve K0 korunan yol kontrollerine baglandi (`komut_yapilacak` iki bicimi de tanir).
 
 ---
 

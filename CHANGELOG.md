@@ -1,5 +1,20 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.7 (2026-11-23)
+
+### Yenilikler ve Duzeltmeler
+- **2.5D Izometrik Oda Duvari Plaketleri ve Bina Cati Tabelalari (`kampus/izometrik.rs`):**
+  - Ic kat kesitinde odalarin onunde havada durup cok odali katlarda birbirine karisan zemin etiketleri kaldirilarak her odanin **on-sol cam duvarinin icine tam duvar egiminde gomulu 2.5D mimari plaket** (`oda_duvar_etiketi_ciz`) eklendi.
+  - Tek satira sigmayan uzun `ISIM - UNVAN` etiketleri `" - "` / `" · "` / `" / "` ya da en dengeli kelime sinirindan otomatik olarak **2 temiz satira bolunur** (`etiketi_ikiye_bol`, `metni_sigdir`), 0.5 px adimli font olcekleme (`font_adim`) ve dusuk zoom gorunurlugu ile komsu odalarla cakismaz.
+  - Dis bina gorunumlerinde sokak seviyesindeki yuzer isim rozeti kaldirilarak her binanin catisina celik destekli ve 4 kamera acisina uyumlu **2.5D mimari cati tabelasi** (`cati_tabelasi_ciz`) sabitlendi; bina durum kartlari tabelanin ustunde cakismadan konumlanir.
+- **Tam Ekran (Maximized) Baslangic (`main.rs`):**
+  - Uygulama sifirdan acildiginda dogrudan ekrani tamamen kaplayarak (`.with_maximized(true)`) acilir; pencere kucultuldugunde (Restore) son kaydedilen normal boyut/konuma (yoksa `1280x800`) doner.
+- **Eski Surum Metinleri, 17 Ajan Profili (`agents/*.md`) ve Sablon Temizligi:**
+  - `Tum ofis` grubundaki `"Demir'in yerine konusma planlayicisi"` basligi `"Ofis is planlayicisi"` olarak duzeltildi; arayuz, CLI, cekirdek mesajlari, 17 `agents/*.md` rol profili (`yonetici.md` ve `ux-tasarimcisi.md` tutarliligi dahil), `sablonlar/` ve `docs/KONUSMALAR.md` eski surum artiklarindan (`Demir`, `ajans`, `ajans.json`, `~/.ajans`, `cop.js`, ic kart kimlikleri) arindirildi.
+  - Tum dahili geriye uyumluluk sozlesmeleri (`~/.ajans`, `ajans.json`, `onay: demir`, `--kimden gm|demir`, `Demir otomatik onayi:` + `GM otomatik onayi:`, `kapilar.json` regex desenleri) korundu.
+- **K0 Guvenlik Kapisi `ykt cop` Sertlestirmesi (`ykt-guard/src/kapi.rs`):**
+  - `kesin_segment` ve `yazan_komut()` icinde yalniz `ajans cop` degil, `ykt cop` / `ykt.exe cop` / `ykt --kok <yol> cop` komutlari da yazma hedefi olarak denetlenerek kart siniri ve K0 korunan yol kontrollerine baglandi (`komut_yapilacak` iki bicimi de tanir).
+
 ## v1.8.6 (2026-11-23)
 
 ### Yenilikler ve Duzeltmeler
