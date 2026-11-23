@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.3</code> (2026-11-23) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.3">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.4</code> (2026-11-23) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.4">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.3)
+## İndirme (v1.8.4)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.3_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.3/YKT-Holding_1.8.3_x64-setup.exe) | `5be0e11998399030da442780b18b2c98da78da3705bf3cfca87efddf2e5d8878` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.3_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.3/YKT-Holding_1.8.3_x64-portatif.zip) | `3eceed551f4122cae32b293e0bf1e8ed7e8e1be36350343a02ed91a845c00c6d` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.3/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.4_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.4/YKT-Holding_1.8.4_x64-setup.exe) | `404f9237edde00ba6d879126f640c716423ce6d6443cd9f6174ea86ed0aa63b2` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.4_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.4/YKT-Holding_1.8.4_x64-portatif.zip) | `67760e01907102f29267470cae7c40b92efc2601a24dd92e265e47e1a326e9ac` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.4/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.3_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "5be0e11998399030da442780b18b2c98da78da3705bf3cfca87efddf2e5d8878"
+> (Get-FileHash .\YKT-Holding_1.8.4_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "404f9237edde00ba6d879126f640c716423ce6d6443cd9f6174ea86ed0aa63b2"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.3_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.4_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.3_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.4_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,12 +90,13 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.3)
+## Mevcut Sürümde Neler Var? (v1.8.4)
 
-### Duzeltmeler
-- **Oda Disi Bos Kat Kosesine Yerlesme Hatasi Giderildi (`iso_hareket.rs`):**
-  - Ust kattaki yonetici alt kata gorev teslimi (`Teslim`) icin indiginde, o katta soru/onay/engel bekleyen baska bir ajanin bu katta ofisi olmayan ziyaretci yoneticiyi hedefleyip oda disi bos kat kosesine (`yedek_konum(None)`) dusmesi hatasi kokten giderildi.
-  - **Net Katlar Arasi Koreografi:** Lidere soru/onay/engel sorulacagi zaman (`Danis`) calisan asansorle **liderin ofisine** (`Yonetim Kati`) cikar ve sorulan lider soruyu yanitlamak icin kendi ofisinde kalir; odasinda danisan ajan yoksa lider is vermek icin asansorle **ajanin bireysel odasina** iner (`Teslim`). Ayni-kat danisma gecisi de yalniz bu katta gercek ofisi bulunan (ziyaretci olmayan) liderleri hedef alir; hicbir ajan oda disi bos koseye yerlestirilmez.
+### Yenilikler ve Duzeltmeler
+- **Windows Sistem Tepsisi Versiyon ve Guncelleme Menusu (`sistem/tepsi.rs`, `sistem/guncelleme.rs`, `sistem/ekran.rs`, `lib.rs`, `main.rs`):**
+  - Sag alt sistem tepsisi uzerine gelindiginde gorunen ipucu (`szTip`) ve sag tik menusu basligi canli uygulama surumunu (`YKT Holding v1.8.4`) ve guncelleme durumunu (`(Guncel)`, `Yeni surum vX.Y.Z hazir!`, `indiriliyor...`, `kuruluma hazir`) gosterir.
+  - Sag tik menusune **`Guncellemeleri denetle`** ve yeni surum bulundugunda **`Guncelle (vX.Y.Z)` / `Simdi kur (vX.Y.Z)`** secenekleri eklendi; pencere tepsiye gizliyken bile `eframe::App::logic` uzerinden arka planda `latest.json` denetlenir, sonuc Windows tepsi balon bildirimiyle (`NIF_INFO`) gosterilir, `setup.exe` SHA-256 dogrulamasiyla indirilir ve guvenli kapatma uzerinden kurulum baslatilir.
+  - Indirilen kurulum dosyasinin beklenen surum dosyasiyla birebir eslesmesi (`kurulum_dosyasi`) ve kapanis kutusunda `Vazgec` secildiginde bekleyen kurulum planinin temizlenmesi guvence altina alindi.
 
 ---
 

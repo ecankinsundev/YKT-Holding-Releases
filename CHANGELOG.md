@@ -1,5 +1,13 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.4 (2026-11-23)
+
+### Yenilikler ve Duzeltmeler
+- **Windows Sistem Tepsisi Versiyon ve Guncelleme Menusu (`sistem/tepsi.rs`, `sistem/guncelleme.rs`, `sistem/ekran.rs`, `lib.rs`, `main.rs`):**
+  - Sag alt sistem tepsisi uzerine gelindiginde gorunen ipucu (`szTip`) ve sag tik menusu basligi canli uygulama surumunu (`YKT Holding v1.8.4`) ve guncelleme durumunu (`(Guncel)`, `Yeni surum vX.Y.Z hazir!`, `indiriliyor...`, `kuruluma hazir`) gosterir.
+  - Sag tik menusune **`Guncellemeleri denetle`** ve yeni surum bulundugunda **`Guncelle (vX.Y.Z)` / `Simdi kur (vX.Y.Z)`** secenekleri eklendi; pencere tepsiye gizliyken bile `eframe::App::logic` uzerinden arka planda `latest.json` denetlenir, sonuc Windows tepsi balon bildirimiyle (`NIF_INFO`) gosterilir, `setup.exe` SHA-256 dogrulamasiyla indirilir ve guvenli kapatma uzerinden kurulum baslatilir.
+  - Indirilen kurulum dosyasinin beklenen surum dosyasiyla birebir eslesmesi (`kurulum_dosyasi`) ve kapanis kutusunda `Vazgec` secildiginde bekleyen kurulum planinin temizlenmesi guvence altina alindi.
+
 ## v1.8.3 (2026-11-23)
 
 ### Duzeltmeler
