@@ -1,5 +1,12 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.5 (2026-11-23)
+
+### Duzeltmeler
+- **GitHub Releases Yonlendirme Zinciri Destegi (`sistem/guncelleme.rs`):**
+  - `latest_getir()` ve `indir()` artik OAuth icin tum yonlendirmeleri kapatan `bulut::istemci()` (`Policy::none()`) yerine, yalnizca resmi HTTPS GitHub yayin adreslerine (`github.com/ecankinsundev/YKT-Holding-Releases/...`, `release-assets.githubusercontent.com`, `objects.githubusercontent.com`) izin veren ozel guvenli `indirme_istemcisi()` (`.https_only(true)`, port/userinfo reddi, en cok 5 adim) kullanir.
+  - Boylece guncelleme denetimi ve `setup.exe` indirmesi sirasinda GitHub'in `302/303` CDN yonlendirmelerinden kaynaklanan `HTTP 302/303` hatasi kokten giderildi; OAuth istemcisi `Policy::none()` izolasyonu korundu.
+
 ## v1.8.4 (2026-11-23)
 
 ### Yenilikler ve Duzeltmeler
