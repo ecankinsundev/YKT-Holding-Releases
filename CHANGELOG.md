@@ -1,5 +1,12 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.3 (2026-11-23)
+
+### Duzeltmeler
+- **Oda Disi Bos Kat Kosesine Yerlesme Hatasi Giderildi (`iso_hareket.rs`):**
+  - Ust kattaki yonetici alt kata gorev teslimi (`Teslim`) icin indiginde, o katta soru/onay/engel bekleyen baska bir ajanin bu katta ofisi olmayan ziyaretci yoneticiyi hedefleyip oda disi bos kat kosesine (`yedek_konum(None)`) dusmesi hatasi kokten giderildi.
+  - **Net Katlar Arasi Koreografi:** Lidere soru/onay/engel sorulacagi zaman (`Danis`) calisan asansorle **liderin ofisine** (`Yonetim Kati`) cikar ve sorulan lider soruyu yanitlamak icin kendi ofisinde kalir; odasinda danisan ajan yoksa lider is vermek icin asansorle **ajanin bireysel odasina** iner (`Teslim`). Ayni-kat danisma gecisi de yalniz bu katta gercek ofisi bulunan (ziyaretci olmayan) liderleri hedef alir; hicbir ajan oda disi bos koseye yerlestirilmez.
+
 ## v1.8.2 (2026-11-22)
 
 ### Yenilikler ve Duzeltmeler
