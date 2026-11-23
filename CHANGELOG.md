@@ -1,5 +1,16 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.6 (2026-11-23)
+
+### Yenilikler ve Duzeltmeler
+- **Proje Baslatma ve Kapsam Kesfi Kapisi (`proje.rs`, `kurulus.rs`, `sihirbaz.rs`, `agents/yonetici.md`):**
+  - Yeni bir proje kuruldugunda artik ekip kartlari Patron'dan girdi ve onay almadan kendi basina kosmaya baslamaz.
+  - Her yeni projede **`<ONEK>-0001`** numarali ilk kart projenin **yoneticisine (`rol: yonetici`, `pm: kesif`, `onay: patron`, `cwd: <kok>`)** acilir; yonetici bu kartta uretim/kodlama/yayin yapmadan proje turune ve aciklamaya gore eksik kritik bilgileri (hedef platform/kanallar, erisim/hesap/kaynak, teslimat bicimi/ton, kapsam siniri, oncelik ve takvim) **2-4 secenekli onerilerle** (`(onerilen)` ilk sirada) Patron'a sorar.
+  - Sonraki tum ekip kartlari (`0002`, `0003`, ...) kendi bagimlilik zincirlerini indeks kaymasiz koruyarak **`<ONEK>-0001`'e bagimli** acilir ve baslamadan once kesif notundaki / hub notundaki Patron cevaplarini okumasi zorunlu kilinir; Patron kesif kartini cevaplayip onaylamadan hicbir ekip karti kosmaz.
+  - Kesif karti `cwd: <kok>` ile kod deposunda gereksiz bos worktree acmaz; Rapor `KANIT: TAM` + ters tirnakli `- Belge: \`...\`` bicimiyle kanit kapisindan dogrudan gecer.
+- **Temiz Worktree Kurtarma Duzeltmesi (`calisan.rs::kalinti_worktree`):**
+  - Sifir commitli veya bitmis/birlestirilmis **temiz ve ignore'suz** `.kart-wt` kalinti klasorlerinde Windows Geri Donusum Kutusu (`SHFileOperationW`) kilit/tasima hatasiyla kartlarin kalici `engel`e dusmesi giderildi: once resmi `git worktree remove` + `prune` denenir (dal korunur), gerekirse Geri Donusum yedegine dusulur ve iki hata birlikte raporlanir.
+
 ## v1.8.5 (2026-11-23)
 
 ### Duzeltmeler
