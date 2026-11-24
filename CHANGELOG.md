@@ -1,5 +1,18 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.10 (2026-11-24)
+
+### Yenilikler ve Duzeltmeler
+- **Kanonik `onay: gm` Yazimi (`ykt-core/src/kart.rs`, `ykt/src/{proje,pm,denetci,calisan}.rs`):**
+  - Tum uretim kart yazicilari (`proje.rs`, `pm.rs`, `denetci.rs`, `calisan.rs` ve `ykt_core::kart::onay_sahibi`) eski `onay: demir` yerine kanonik `onay: gm` (`marka::GM_KIMLIGI`) yazar; eski kartlar `marka::gm_mi` ile geriye uyumlu okunmaya devam eder.
+- **Gercek Eskalasyon — Kalici Engel 24 Saat Asiminda Otomatik Patron'a Yukseltme (`ykt-core/src/kart/durum_makinesi.rs`, `ykt-core/src/sohbet.rs`, `ykt/src/calisan.rs`, `ykt-holding/src/ekran.rs`):**
+  - Durum makinesine `Engel -> PatronOnayi` gecisi eklendi; gecici olmayan `engel` kartlari 24 saat `zaman_asimi` doldugunda sessizce takili kalmak yerine otomatik olarak `durum: patron-onayi` (`onay: patron`, `sahip: patron`, `yukseltme_nedeni: <engel_sinifi>`, `engel` temizlenerek ve `Sorular`'a engel ozeti eklenerek) durumuna yukseltilir.
+  - Yukseltilmis engel kartlari kart panelinde "is bitti" yerine durustce **"Engel · Karar"** ve **"Engel yukseltildi (<sinif>) - yonetici/GM sure icinde cozemedi, senin kararini bekliyor"** olarak gosterilir.
+  - `durum_cek_ic` kart `engel` durumundan cikarken eski `engel:` alanini temizler.
+- **Durust 2.5D Ofis ve Lider Etiketi (`ykt-holding/src/kampus/iso_hareket.rs`):**
+  - Yalniz gercekten yonetici/GM incelemesi bekleyen (`onay-bekliyor`, Patron onayi olmayan) kartlar ajani liderin odasina (`Lidere soruyor` + mavi `?`) goturur; teknik `engel` (kirmizi `!`) ve `patron-onayi` (altin gulen yuz) kartli ajanlar kendi masalarinda kalir.
+  - Uyuyan veya bosta olan bir liderin ustunde artik sahte `"Soru yanitliyor"` yazmaz: yalniz `Calisiyor` durumundaki lider `"Soru yanitliyor"`, bosta/uykuda olan lider `"Inceleme bekliyor"` gosterir.
+
 ## v1.8.9 (2026-11-24)
 
 ### Yenilikler ve Duzeltmeler
