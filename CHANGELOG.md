@@ -1,5 +1,18 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.15 (2026-11-24)
+
+### Yenilikler ve Duzeltmeler
+- **Kapanis Rol ve Uyum Tablolari (`crates/ykt/src/denetci/kapanis.rs`):**
+  - `OLCUT_TABLOSU` 18 aktif rolu eksiksiz kapsayacak bicimde genisletildi: `veri-analisti` -> `Arastirma`; `proje-lideri`, `hukuk-uyum-uzmani`, `icerik-editoru`, `operasyon-uzmani`, `ux-tasarimcisi`, `senarist`, `sanatci`, `ses-tasarimcisi` -> `Rapor`. Bu roller artik kod karti olcutune dusup haksiz ret/engel yemez ve `icerik-editoru` / `operasyon-uzmani` uzerinde `tekrar:` periyodik kartlari sorunsuz calisir.
+  - `hukuk-uyum-uzmani` yayin oncesi `UYUM_ROLLERI` listesine eklendi.
+- **3 Katmanli Kanit / Varsayim / Teyit Disiplini (`agents/*.md`, `sablonlar/`):**
+  - Olgu ve uyum rollerinde (`arastirmaci`, `veri-analisti`, `hukuk-uyum-uzmani`, `operasyon-uzmani`, `donanimci`) kesin kaynak kurali korundu; `veri-analisti` icindeki "tahmin yasak / projeksiyon yap" celiskisi gercek olcum vs `Varsayim:` projeksiyon ayrimiyla giderildi.
+  - Yaratici/tasarim rollerinde (`sanatci`, `senarist`, `ux-tasarimcisi`, `ses-tasarimcisi`, `icerik-editoru`) bos tasarim kararlari `acik: <neden>` / `Varsayim:` olarak ayrildi; `teyit edilmeli (kim, neyle)` yalniz dogrulanmamis dis olgu, lisans ve sayilar icin sahipli bicime kavustu.
+  - Kirik `holding.md madde 14` / `holding kurali 19` atiflari duzeltildi; `sablonlar/ornek/kurallar/holding.md` madde 7 ve madde 13 koddaki gercek kapanis akisiyla esitlendi.
+- **Tek Komutlu Yerel Kurulum ve Disk Hijyeni (`crates/ykt-holding/paket/paketle.js`):**
+  - `paketle.js` artik WinLibs MinGW + GNU toolchain ortamini otomatik bulur, `--kur` bayragiyla sessiz yerel kurulum + `ykt kur --yenile` + yeniden baslatma ve eski paket/hash/temp temizligini PowerShell sarmalayicisiz yapar.
+
 ## v1.8.14 (2026-11-24)
 
 ### Duzeltmeler
