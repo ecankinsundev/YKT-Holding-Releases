@@ -1,5 +1,15 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.12 (2026-11-24)
+
+### Yenilikler
+- **Patron Odasi Ziyareti & En Cok 3 Ajan Kapasitesi (`kampus/mod.rs`, `kampus/iso_hareket.rs`, `kampus/izometrik.rs`):**
+  - Patron onayi/karari bekleyen yerel ajanlar (`patron-onayi` veya `onay-bekliyor` + `onay: patron`) dis haritada cam koprulerden Merkez Ofis'e (`ykt-merkez`) yurur ve Patron odasina (`yk-odasi` / `baskan-odasi`) gelir; kendi binalarinda klonlanmaz.
+  - Patron odasinin icine ayni anda en cok **3 ajan** (`PATRON_ODA_KAPASITE = 3`) cakismayan ziyaretci noktalarina (`Patron onayi` + altin gulen yuz) alinir.
+- **Lobi Kuyrugu & Onay Sonrasi Yumusak Giris (`kampus/iso_hareket.rs`):**
+  - 3'ten fazla onay bekleyen ajan varsa fazlaliklar Merkez Ofis'teki **Lobi** odasinda (lobi yoksa Patron odasinin kapi onunde koridorda) deterministik sira numarasiyla (`Lobide sira (#1)`, `#2`, ...) bekler.
+  - Patron icerdeki bir ajana onay verdiginde o ajan kendi binasina doner ve lobide bekleyen siradaki ajan koridordan yumusak yuruyusle (`IcHareket`) Patron odasina girip varista 0 FPS'e doner.
+
 ## v1.8.11 (2026-11-24)
 
 ### Duzeltmeler
