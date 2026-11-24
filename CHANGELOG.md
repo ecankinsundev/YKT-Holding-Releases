@@ -1,5 +1,14 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.8 (2026-11-24)
+
+### Duzeltmeler
+- **Sade Ajan Ustu Etiketi (`kampus/izometrik.rs`):**
+  - 2.5D ic kat kesitinde her ajanin uzerindeki cam rozette artik adinin yaninda unvani tekrarlanmaz (odalarin cam duvarinda zaten isim + unvan yer alir); boylece yan yana gelen ajan etiketleri sade ve cakismasiz gorunur.
+  - Ajanin uzerine tiklandiginda acilan Hizli Ajan Karti'nda gorevi/unvani (`Ad — Unvan`, unvan bossa `rol` yedekli) gosterilmeye devam eder.
+- **Canli Orkestrasyon Odalari Esitlemesi:**
+  - `YKT Orkestrasyon Muhendislik` binasindaki 6 bireysel odanin adlari diger sirketlerle ayni `<Ad> - <Rol>` standardina esitlendi.
+
 ## v1.8.7 (2026-11-23)
 
 ### Yenilikler ve Duzeltmeler
