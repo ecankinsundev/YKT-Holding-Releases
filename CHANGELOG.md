@@ -1,5 +1,14 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.11 (2026-11-24)
+
+### Duzeltmeler
+- **Kart Bagimlilik Okumasi (`ykt-core/src/kart.rs`):**
+  - `Kart` yapisi kart on-bilgisindeki `bagimli: [...]` listesini artik dogrudan okur.
+- **Durust 2.5D Gorev Teslimi (`ykt-holding/src/kampus/iso_hareket.rs`):**
+  - Katlar arasi (`bina_katlar_arasi_ziyaretler`) ve ayni kat (`hedefleri_hesapla`) teslim/dagitim akisi ortak `aktif_teslim_karti` kuralina baglandi.
+  - `bekliyor` durumundaki bir kart yalniz tum `bagimli` onkosullari `bitti` oldugunda ve lider o an gercekten aktif (`Calisiyor` veya uzerinde `durum: calisiyor` karti varken) teslim olarak gosterilir; uyuyan/bosta liderler veya bagimliligi bitmemis kartlar icin artik sahte `YK · Gorev -> ...` / `Gorev aliyor` gosterilmez.
+
 ## v1.8.10 (2026-11-24)
 
 ### Yenilikler ve Duzeltmeler
