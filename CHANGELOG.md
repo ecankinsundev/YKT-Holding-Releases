@@ -1,5 +1,12 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.14 (2026-11-24)
+
+### Duzeltmeler
+- **Patron Makaminda Kalma Kurali (`kampus/iso_hareket.rs`):**
+  - Patron odasinda veya lobi kuyrugunda karar/onay bekleyen en az bir ajan varken Patron (`rol == "insan"` / `sahip`) artik Kahve & Dinlenme veya Lobi'ye gitmez; kendi masasinda **`Karar gorusmesi`** (`Karar gorusmesi (N)`) durumuyla bekleyen ajanlari karsilar.
+  - Onay kuyrugu tamamen bosaldiginda Patron tekrar dinlenme/sosyal alana gecebilir ve yeni bir karar geldiginde koridordan yumusak yuruyusle odasina doner.
+
 ## v1.8.13 (2026-11-24)
 
 ### Yenilikler ve Duzeltmeler
