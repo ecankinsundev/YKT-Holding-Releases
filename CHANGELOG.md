@@ -1,5 +1,15 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.13 (2026-11-24)
+
+### Yenilikler ve Duzeltmeler
+- **Engelli Kartlarin Patron Odasina Gelmesi ve Onceligi (`ykt-core/src/kart.rs`, `kampus/iso_hareket.rs`):**
+  - `Kart` yapisi `yukseltme_nedeni` alanini okur; `patron_onayi_karti` artik `tahta::sinifla` ile uyumlu olarak `durum: engel` + `onay: patron` / `KARAR` kartlarini da Patron odasina yonlendirir.
+  - Teknik engelli (`durum: engel`) veya engelden yukseltilmis (`yukseltme_nedeni` dolu) ajanlar 3 kisilik Patron odasinda rutin onaylardan oncelikli yer alir.
+- **Kirmizi Engel + Onay Ayrimi (`kampus/izometrik.rs`):**
+  - Engelli/yukseltilmis Patron onayi bekleyen ajanlar artik rutin onaylarla ayni altin gulen yuz yerine **kirmizi `!` kafa simgesi**, kirmizi cerceve ve kirmizi **`! Engel · Patron onayi`** (lobideyse **`! Engel · Lobide (#N)`**) rozetiyle aninda ayrilir.
+  - Hizli Ajan Karti da ayni kirmizi vurguyla **`! Engel (<sinif>) · Patron onayi bekliyor`** durumunu gosterir.
+
 ## v1.8.12 (2026-11-24)
 
 ### Yenilikler

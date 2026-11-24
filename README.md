@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.12</code> (2026-11-24) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.12">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.13</code> (2026-11-24) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.13">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.12)
+## İndirme (v1.8.13)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.12_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.12/YKT-Holding_1.8.12_x64-setup.exe) | `92b2d714c7e682a11cea187e56f3aa0eeff26a00243d2d28ed7d00b15cca8c20` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.12_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.12/YKT-Holding_1.8.12_x64-portatif.zip) | `bf8c7b6e080292dc9e83518c89f21bbc3c8fb93fb67c42ed99438ce73acb3345` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.12/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.13_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.13/YKT-Holding_1.8.13_x64-setup.exe) | `2ffe7bb102681cdc4daff7dc56356e654baf153b773b649e50dca583fbecf2d5` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.13_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.13/YKT-Holding_1.8.13_x64-portatif.zip) | `9de4d8040861ba4bafa0bc9b60b5589dbd4d732234e487a739d681d11cc699b7` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.13/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.12_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "92b2d714c7e682a11cea187e56f3aa0eeff26a00243d2d28ed7d00b15cca8c20"
+> (Get-FileHash .\YKT-Holding_1.8.13_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "2ffe7bb102681cdc4daff7dc56356e654baf153b773b649e50dca583fbecf2d5"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.12_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.13_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.12_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.13_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,15 +90,15 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.12)
+## Mevcut Sürümde Neler Var? (v1.8.13)
 
-### Yenilikler
-- **Patron Odasi Ziyareti & En Cok 3 Ajan Kapasitesi (`kampus/mod.rs`, `kampus/iso_hareket.rs`, `kampus/izometrik.rs`):**
-  - Patron onayi/karari bekleyen yerel ajanlar (`patron-onayi` veya `onay-bekliyor` + `onay: patron`) dis haritada cam koprulerden Merkez Ofis'e (`ykt-merkez`) yurur ve Patron odasina (`yk-odasi` / `baskan-odasi`) gelir; kendi binalarinda klonlanmaz.
-  - Patron odasinin icine ayni anda en cok **3 ajan** (`PATRON_ODA_KAPASITE = 3`) cakismayan ziyaretci noktalarina (`Patron onayi` + altin gulen yuz) alinir.
-- **Lobi Kuyrugu & Onay Sonrasi Yumusak Giris (`kampus/iso_hareket.rs`):**
-  - 3'ten fazla onay bekleyen ajan varsa fazlaliklar Merkez Ofis'teki **Lobi** odasinda (lobi yoksa Patron odasinin kapi onunde koridorda) deterministik sira numarasiyla (`Lobide sira (#1)`, `#2`, ...) bekler.
-  - Patron icerdeki bir ajana onay verdiginde o ajan kendi binasina doner ve lobide bekleyen siradaki ajan koridordan yumusak yuruyusle (`IcHareket`) Patron odasina girip varista 0 FPS'e doner.
+### Yenilikler ve Duzeltmeler
+- **Engelli Kartlarin Patron Odasina Gelmesi ve Onceligi (`ykt-core/src/kart.rs`, `kampus/iso_hareket.rs`):**
+  - `Kart` yapisi `yukseltme_nedeni` alanini okur; `patron_onayi_karti` artik `tahta::sinifla` ile uyumlu olarak `durum: engel` + `onay: patron` / `KARAR` kartlarini da Patron odasina yonlendirir.
+  - Teknik engelli (`durum: engel`) veya engelden yukseltilmis (`yukseltme_nedeni` dolu) ajanlar 3 kisilik Patron odasinda rutin onaylardan oncelikli yer alir.
+- **Kirmizi Engel + Onay Ayrimi (`kampus/izometrik.rs`):**
+  - Engelli/yukseltilmis Patron onayi bekleyen ajanlar artik rutin onaylarla ayni altin gulen yuz yerine **kirmizi `!` kafa simgesi**, kirmizi cerceve ve kirmizi **`! Engel · Patron onayi`** (lobideyse **`! Engel · Lobide (#N)`**) rozetiyle aninda ayrilir.
+  - Hizli Ajan Karti da ayni kirmizi vurguyla **`! Engel (<sinif>) · Patron onayi bekliyor`** durumunu gosterir.
 
 ---
 
