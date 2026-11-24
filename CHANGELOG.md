@@ -1,5 +1,18 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.9 (2026-11-24)
+
+### Yenilikler ve Duzeltmeler
+- **Canli Ajan Kafa Simgeleri (`kampus/izometrik.rs`, `kampus/mod.rs`):**
+  - Ajanlarin kafalarinin sag-ustunde saf 2D vektor durum baloncuklari eklendi: is tikandiginda / 10+ dk ilerlemediginde (`takildi`) / hata veya teknik engelde **kirmizi unlem (`!`)**, Patron'a soru veya Patron onayi/karari gerektiginde **altin gulen yuz**, liderden veya GM'den cevap beklendiginde **mavi soru isareti (`?`)**.
+- **Kompakt, Cakismasiz Ajan Rozetleri ve Kat Kisaltmasi (`kampus/izometrik.rs`, `kampus/iso_hareket.rs`):**
+  - Ajan ustu rozetinden AI motoru/model ve uzak makine tekrari kaldirildi; yan yana duran ajan rozetleri dikey basamaklanarak cakismaz.
+  - Baska kata cikan/inen ajanlarda uzun `"Asansorle cikti"` / `"Asansorle geldi"` yerine kaynak kat kisaltmasi (`K1 · Lidere soruyor`, `YK · Gorev -> ...`) gosterilir.
+- **Ferah Hizli Ajan Karti & Okunakli Model Etiketleri (`kampus/izometrik.rs`, `ykt-core/src/motor_secim.rs`):**
+  - Ajana tiklandiginda acilan Hizli Ajan Karti (`336px`) ad, gorev/unvan, acik durum, `AI Motoru:` rozeti (`AGY Neon (Med)` vb.), ilgili kart ve fonksiyon dugmelerini kendi satirlarinda kesilmeden ve ust uste binmeden gosterir.
+- **Engel / Onay Karti Baglama Duzeltmesi (`kampus/mod.rs`, `kampus/iso_hareket.rs`):**
+  - Acik `engel` / `onay-bekliyor` / `patron-onayi` karti bulunan ajanlarin kart bilgisi `Ajan.kart` alanina baglandi; boylece lider odasina cikan ajanlara tiklandiginda `"Aktif kart yok"` gorunmesi giderildi ve karti olmayan ajanlar icin sahte danisma ziyareti engellendi.
+
 ## v1.8.8 (2026-11-24)
 
 ### Duzeltmeler

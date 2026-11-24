@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.8</code> (2026-11-24) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.8">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.9</code> (2026-11-24) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.9">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.8)
+## İndirme (v1.8.9)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.8_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.8/YKT-Holding_1.8.8_x64-setup.exe) | `f381cf296dda3eb607493ead5bdfdb419f02a12efa6c53611d3763a11b5bec53` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.8_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.8/YKT-Holding_1.8.8_x64-portatif.zip) | `46c4a9a8746d525694913d9e4b990f1480a04ca6ab5f10d625cdf057e8b046d6` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.8/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.9_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.9/YKT-Holding_1.8.9_x64-setup.exe) | `fa9fbf152d04c7801f9301c4063e3f9022e914c11d40a1c33c6dbd837fdf84a5` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.9_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.9/YKT-Holding_1.8.9_x64-portatif.zip) | `887391b90933f6a12754188273eed30926ec36ebd165d017dfe23eafb24c34ff` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.9/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.8_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "f381cf296dda3eb607493ead5bdfdb419f02a12efa6c53611d3763a11b5bec53"
+> (Get-FileHash .\YKT-Holding_1.8.9_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "fa9fbf152d04c7801f9301c4063e3f9022e914c11d40a1c33c6dbd837fdf84a5"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.8_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.9_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.8_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.9_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,14 +90,18 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.8)
+## Mevcut Sürümde Neler Var? (v1.8.9)
 
-### Duzeltmeler
-- **Sade Ajan Ustu Etiketi (`kampus/izometrik.rs`):**
-  - 2.5D ic kat kesitinde her ajanin uzerindeki cam rozette artik adinin yaninda unvani tekrarlanmaz (odalarin cam duvarinda zaten isim + unvan yer alir); boylece yan yana gelen ajan etiketleri sade ve cakismasiz gorunur.
-  - Ajanin uzerine tiklandiginda acilan Hizli Ajan Karti'nda gorevi/unvani (`Ad — Unvan`, unvan bossa `rol` yedekli) gosterilmeye devam eder.
-- **Canli Orkestrasyon Odalari Esitlemesi:**
-  - `YKT Orkestrasyon Muhendislik` binasindaki 6 bireysel odanin adlari diger sirketlerle ayni `<Ad> - <Rol>` standardina esitlendi.
+### Yenilikler ve Duzeltmeler
+- **Canli Ajan Kafa Simgeleri (`kampus/izometrik.rs`, `kampus/mod.rs`):**
+  - Ajanlarin kafalarinin sag-ustunde saf 2D vektor durum baloncuklari eklendi: is tikandiginda / 10+ dk ilerlemediginde (`takildi`) / hata veya teknik engelde **kirmizi unlem (`!`)**, Patron'a soru veya Patron onayi/karari gerektiginde **altin gulen yuz**, liderden veya GM'den cevap beklendiginde **mavi soru isareti (`?`)**.
+- **Kompakt, Cakismasiz Ajan Rozetleri ve Kat Kisaltmasi (`kampus/izometrik.rs`, `kampus/iso_hareket.rs`):**
+  - Ajan ustu rozetinden AI motoru/model ve uzak makine tekrari kaldirildi; yan yana duran ajan rozetleri dikey basamaklanarak cakismaz.
+  - Baska kata cikan/inen ajanlarda uzun `"Asansorle cikti"` / `"Asansorle geldi"` yerine kaynak kat kisaltmasi (`K1 · Lidere soruyor`, `YK · Gorev -> ...`) gosterilir.
+- **Ferah Hizli Ajan Karti & Okunakli Model Etiketleri (`kampus/izometrik.rs`, `ykt-core/src/motor_secim.rs`):**
+  - Ajana tiklandiginda acilan Hizli Ajan Karti (`336px`) ad, gorev/unvan, acik durum, `AI Motoru:` rozeti (`AGY Neon (Med)` vb.), ilgili kart ve fonksiyon dugmelerini kendi satirlarinda kesilmeden ve ust uste binmeden gosterir.
+- **Engel / Onay Karti Baglama Duzeltmesi (`kampus/mod.rs`, `kampus/iso_hareket.rs`):**
+  - Acik `engel` / `onay-bekliyor` / `patron-onayi` karti bulunan ajanlarin kart bilgisi `Ajan.kart` alanina baglandi; boylece lider odasina cikan ajanlara tiklandiginda `"Aktif kart yok"` gorunmesi giderildi ve karti olmayan ajanlar icin sahte danisma ziyareti engellendi.
 
 ---
 
