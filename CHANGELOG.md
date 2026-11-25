@@ -1,5 +1,14 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.8.17 (2026-11-25)
+
+### Yenilikler ve Duzeltmeler
+- **Tek Birlesik 'Kota Olc' Butonu (`ykt-holding/src/kullanim_ekran.rs`, `ayarlar.rs`):**
+  - `Kullanim` ve `Ayarlar > Kota ve butce` ekranlarindaki ayri `Yenile`, `Fable Dahil Olc` ve `Antigravity Olc` butonlari tek bir **`Kota Olc`** butonunda birlestirildi (`ykt butce --canli --fable`).
+  - Tek tiklamayla makinede kurulu ve olculebilir tum AI motorlarinin (Claude 5 saatlik + haftalik + Fable ayri havuzu ve Antigravity `agy -p /usage` 0-token canli kotalari) olcumu eszamanli calisir; kurulu olmayan motor digerini bozmadan atlanir.
+- **Otomatik Fable -> Haiku Geri Dusus (`ykt/src/butce_canli.rs`):**
+  - `claude_probe_tam` once `claude --model fable` ile tek seferde tum havuzlari olcer; hesap veya CLI `fable` modelini desteklemiyorsa ya da `rate_limit_event` donmezse otomatik olarak hafif `haiku` yoklamasina duser ve son kosu pencerelerini korur.
+
 ## v1.8.15 (2026-11-24)
 
 ### Yenilikler ve Duzeltmeler

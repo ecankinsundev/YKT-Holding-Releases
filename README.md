@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.15</code> (2026-11-24) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.15">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.8.17</code> (2026-11-25) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.17">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.15)
+## İndirme (v1.8.17)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.15_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.15/YKT-Holding_1.8.15_x64-setup.exe) | `8535c493ddad81b4f36179eed90fd0daf86df5b47349e07a6fb361c919a2a7d6` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.15_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.15/YKT-Holding_1.8.15_x64-portatif.zip) | `b99e65b47b1e0fe6b809a05420f2f12d8538e5da8c146d873227255869d5cd27` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.15/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.17_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/YKT-Holding_1.8.17_x64-setup.exe) | `5083646944253235dcbb91edd54c0563bc97c0d8bd0e9bb3b4608790d82f2f55` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.17_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/YKT-Holding_1.8.17_x64-portatif.zip) | `bbc108b5b5b1427fa0c5dee01f0f06327e75e7ec14c92932a9e2566e39033e37` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.15_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "8535c493ddad81b4f36179eed90fd0daf86df5b47349e07a6fb361c919a2a7d6"
+> (Get-FileHash .\YKT-Holding_1.8.17_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "5083646944253235dcbb91edd54c0563bc97c0d8bd0e9bb3b4608790d82f2f55"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.15_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.8.17_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.15_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.8.17_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,18 +90,14 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.15)
+## Mevcut Sürümde Neler Var? (v1.8.17)
 
 ### Yenilikler ve Duzeltmeler
-- **Kapanis Rol ve Uyum Tablolari (`crates/ykt/src/denetci/kapanis.rs`):**
-  - `OLCUT_TABLOSU` 18 aktif rolu eksiksiz kapsayacak bicimde genisletildi: `veri-analisti` -> `Arastirma`; `proje-lideri`, `hukuk-uyum-uzmani`, `icerik-editoru`, `operasyon-uzmani`, `ux-tasarimcisi`, `senarist`, `sanatci`, `ses-tasarimcisi` -> `Rapor`. Bu roller artik kod karti olcutune dusup haksiz ret/engel yemez ve `icerik-editoru` / `operasyon-uzmani` uzerinde `tekrar:` periyodik kartlari sorunsuz calisir.
-  - `hukuk-uyum-uzmani` yayin oncesi `UYUM_ROLLERI` listesine eklendi.
-- **3 Katmanli Kanit / Varsayim / Teyit Disiplini (`agents/*.md`, `sablonlar/`):**
-  - Olgu ve uyum rollerinde (`arastirmaci`, `veri-analisti`, `hukuk-uyum-uzmani`, `operasyon-uzmani`, `donanimci`) kesin kaynak kurali korundu; `veri-analisti` icindeki "tahmin yasak / projeksiyon yap" celiskisi gercek olcum vs `Varsayim:` projeksiyon ayrimiyla giderildi.
-  - Yaratici/tasarim rollerinde (`sanatci`, `senarist`, `ux-tasarimcisi`, `ses-tasarimcisi`, `icerik-editoru`) bos tasarim kararlari `acik: <neden>` / `Varsayim:` olarak ayrildi; `teyit edilmeli (kim, neyle)` yalniz dogrulanmamis dis olgu, lisans ve sayilar icin sahipli bicime kavustu.
-  - Kirik `holding.md madde 14` / `holding kurali 19` atiflari duzeltildi; `sablonlar/ornek/kurallar/holding.md` madde 7 ve madde 13 koddaki gercek kapanis akisiyla esitlendi.
-- **Tek Komutlu Yerel Kurulum ve Disk Hijyeni (`crates/ykt-holding/paket/paketle.js`):**
-  - `paketle.js` artik WinLibs MinGW + GNU toolchain ortamini otomatik bulur, `--kur` bayragiyla sessiz yerel kurulum + `ykt kur --yenile` + yeniden baslatma ve eski paket/hash/temp temizligini PowerShell sarmalayicisiz yapar.
+- **Tek Birlesik 'Kota Olc' Butonu (`ykt-holding/src/kullanim_ekran.rs`, `ayarlar.rs`):**
+  - `Kullanim` ve `Ayarlar > Kota ve butce` ekranlarindaki ayri `Yenile`, `Fable Dahil Olc` ve `Antigravity Olc` butonlari tek bir **`Kota Olc`** butonunda birlestirildi (`ykt butce --canli --fable`).
+  - Tek tiklamayla makinede kurulu ve olculebilir tum AI motorlarinin (Claude 5 saatlik + haftalik + Fable ayri havuzu ve Antigravity `agy -p /usage` 0-token canli kotalari) olcumu eszamanli calisir; kurulu olmayan motor digerini bozmadan atlanir.
+- **Otomatik Fable -> Haiku Geri Dusus (`ykt/src/butce_canli.rs`):**
+  - `claude_probe_tam` once `claude --model fable` ile tek seferde tum havuzlari olcer; hesap veya CLI `fable` modelini desteklemiyorsa ya da `rate_limit_event` donmezse otomatik olarak hafif `haiku` yoklamasina duser ve son kosu pencerelerini korur.
 
 ---
 
