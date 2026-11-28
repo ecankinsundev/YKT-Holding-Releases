@@ -10,24 +10,24 @@
 </p>
 
 <p align="center">
-  <strong>Güncel Sürüm:</strong> <code>v1.8.17</code> (2026-11-25) &nbsp;·&nbsp;
-  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.8.17">Sürüm Sayfası</a> &nbsp;·&nbsp;
+  <strong>Güncel Sürüm:</strong> <code>v1.9.0</code> (2026-11-28) &nbsp;·&nbsp;
+  <a href="https://github.com/ecankinsundev/YKT-Holding-Releases/releases/tag/v1.9.0">Sürüm Sayfası</a> &nbsp;·&nbsp;
   <a href="CHANGELOG.md">Tüm Sürüm Notları</a>
 </p>
 
 ---
 
-## İndirme (v1.8.17)
+## İndirme (v1.9.0)
 
 | Platform | Paket Türü | İndirme Bağlantısı | SHA-256 |
 |---|---|---|---|
-| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.8.17_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/YKT-Holding_1.8.17_x64-setup.exe) | `5083646944253235dcbb91edd54c0563bc97c0d8bd0e9bb3b4608790d82f2f55` |
-| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.8.17_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/YKT-Holding_1.8.17_x64-portatif.zip) | `bbc108b5b5b1427fa0c5dee01f0f06327e75e7ec14c92932a9e2566e39033e37` |
-| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.8.17/latest.json) | — |
+| **Windows x64** | Kurulum Sihirbazı (Önerilen) | [`YKT-Holding_1.9.0_x64-setup.exe`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.9.0/YKT-Holding_1.9.0_x64-setup.exe) | `a0f83ba742281a24f8a31f982f55e205e0b600c785e8ae4d2d74c17e1254f61f` |
+| **Windows x64** | Portatif Arşiv (Kurulumsuz) | [`YKT-Holding_1.9.0_x64-portatif.zip`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.9.0/YKT-Holding_1.9.0_x64-portatif.zip) | `b59b6ab636f246499bff2f330549d65c242fb71b87ded9afaf06ba1efe8afc8e` |
+| **Güncelleme Manifestosu** | Sürüm Kaydı | [`latest.json`](https://github.com/ecankinsundev/YKT-Holding-Releases/releases/download/v1.9.0/latest.json) | — |
 
 > **Bütünlük Doğrulama (PowerShell):**
 > ```powershell
-> (Get-FileHash .\YKT-Holding_1.8.17_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "5083646944253235dcbb91edd54c0563bc97c0d8bd0e9bb3b4608790d82f2f55"
+> (Get-FileHash .\YKT-Holding_1.9.0_x64-setup.exe -Algorithm SHA256).Hash.ToLower() -eq "a0f83ba742281a24f8a31f982f55e205e0b600c785e8ae4d2d74c17e1254f61f"
 > ```
 > Çıktı `True` dönmelidir.
 
@@ -47,12 +47,12 @@
 ## Kurulum
 
 ### Seçenek 1 — Windows Kurulum Dosyası (Önerilen)
-1. Yukarıdaki tablodan **`YKT-Holding_1.8.17_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
+1. Yukarıdaki tablodan **`YKT-Holding_1.9.0_x64-setup.exe`** dosyasını indirin ve çalıştırın (yönetici izni gerektirmez).
 2. Uygulama `%LOCALAPPDATA%\YKT Holding` klasörüne kurulur, kullanıcı `PATH` ortam değişkenine `ykt` komutunu ekler ve Başlat Menüsü / Masaüstü kısayollarını oluşturur.
 3. **YKT Holding** uygulamasını açın; ilk açılış sihirbazı çalışma klasörünüzü, şirket/ekip yapınızı ve `ykt-guard` güvenlik kapılarını otomatik yapılandırır.
 
 ### Seçenek 2 — Portatif ZIP (Kurulumsuz)
-1. **`YKT-Holding_1.8.17_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
+1. **`YKT-Holding_1.9.0_x64-portatif.zip`** arşivini dilediğiniz klasöre çıkartın.
 2. Klasör içindeki `ykt-holding.exe` dosyasını çalıştırın.
 
 ### Mevcut Sürümden Güncelleme
@@ -90,14 +90,21 @@ ykt gm-yerel               # Holding Genel Müdürü ile terminal oturumu aç
 
 ---
 
-## Mevcut Sürümde Neler Var? (v1.8.17)
+## Mevcut Sürümde Neler Var? (v1.9.0)
+
+### Kirici Degisiklikler (yukseltme oncesi okuyun)
+- **Tek sozlesme, takma ad yok:** uygulama yalniz `YKT_*` ortam adlarini, `~/.ykt` ev klasorunu ve `ykt.json` ayar dosyasini tanir. Baska bir uygulamanin ortam adlari, ev klasoru, ayar dosyasi, kancasi ya da sureci okunmaz, yazilmaz, durdurulmaz.
+- **Disk ve bulut bicim adlari degisti:** ornek kokunde `.ykt-yedek/` (ustune yazilan dosyalarin tarihli kopyalari), `.ykt-cop/`, `.ykt-arsiv/` (yerel yedek deposu, isaret dosyasi `ykt-yedek.json`); ortak/bulut klasorunde `.ykt-kira`, `.ykt-manifest-*`, `.ykt-bulut-cop`, `.ykt-gecici`, `.ykt-sifre.json`; Drive ozelligi `ykt_sha256`; makine nabiz alani `ykt_acik`; guncelleme imza basligi `ykt-holding-guncelle 1`. Onceki surumle alinmis yerel/bulut yedekleri bu surum OKUMAZ: yukseltmeden once ornek klasorunun kopyasini alin, yukselttikten sonra yeni yedek alin.
+- **Yerlesik tarayici CDP portu `7715` -> `7815`** (ayni makinede baska bir uygulamanin tarayici paneliyle cakismasin).
+- **Eski ornek gocleri kalkti:** eski merkez bina kimligi, eski sahip kimligi/adi, eski kart durum takma adi ve `--patron-onayi` bayraginin eski takma adi artik okunmaz. (GM icin `demir` -> `gm` ve `butce-durdu` -> `engel` okuma uyumu duruyor.)
+- **Eski Node onyukleme yolu silindi:** `bin/kur.js`, `bin/ykt.js`, `bin/test-kapi.js`, `bin/test-kur.js` ve `hooks/*.js` yok. Tek kurucu `ykt kur`, tek kanca ikilisi `ykt-guard`.
 
 ### Yenilikler ve Duzeltmeler
-- **Tek Birlesik 'Kota Olc' Butonu (`ykt-holding/src/kullanim_ekran.rs`, `ayarlar.rs`):**
-  - `Kullanim` ve `Ayarlar > Kota ve butce` ekranlarindaki ayri `Yenile`, `Fable Dahil Olc` ve `Antigravity Olc` butonlari tek bir **`Kota Olc`** butonunda birlestirildi (`ykt butce --canli --fable`).
-  - Tek tiklamayla makinede kurulu ve olculebilir tum AI motorlarinin (Claude 5 saatlik + haftalik + Fable ayri havuzu ve Antigravity `agy -p /usage` 0-token canli kotalari) olcumu eszamanli calisir; kurulu olmayan motor digerini bozmadan atlanir.
-- **Otomatik Fable -> Haiku Geri Dusus (`ykt/src/butce_canli.rs`):**
-  - `claude_probe_tam` once `claude --model fable` ile tek seferde tum havuzlari olcer; hesap veya CLI `fable` modelini desteklemiyorsa ya da `rate_limit_event` donmezse otomatik olarak hafif `haiku` yoklamasina duser ve son kosu pencerelerini korur.
+- **Kurulum paketi baska uygulamalara dokunmaz (`paket/ykt-holding.nsi`, `paket/linux/*.sh`, `bin/paketle-linux.sh`):** "eski kurulum temizligi" tamamen kaldirildi. Onceki surumler her kurulumda baska bir uygulamanin kurulum klasorunu, kisayollarini ve kayit defteri anahtarlarini siliyor, Linux'ta `~/.local/bin` altina o uygulamanin komut adlariyla baglanti kuruyor ve `.deb` paketinde onu `Replaces/Conflicts` ile kaldiriyordu. Kurulum artik yalniz kendi klasorunu, kisayolunu ve `YKT Holding` kayit anahtarini yazar/siler; paket testi bunu denetler.
+- **Ortak `~/.claude` klasorune yazilmaz:** kanca, rol ve skill kopyalari `~/.ykt/claude/` altinda uretilir, kart kosusu ve sohbet koprusu bunlari Claude'a kosu basina verir. `ykt kur` onceki surumun ortak klasorde biraktigi kendi kayitlarini temizler, baska uygulamalarin kayitlarina dokunmaz.
+- **Kapi kurallari yalniz kendi kurulumunu korur (`ykt-guard/src/kapi.rs`):** gomulu yazma/okuma yasaklari `YKT Holding` kurulum klasoru ve `~/.ykt` ile sinirlidir.
+- **Paketleme ortami:** yalniz `YKT_KANAL`, `YKT_D_NO`, `YKT_PAKET` okunur.
+- **Tek ad:** kaynak, sablon, skill, rol ve belgelerde onceki urun adi ve ona bagli crate/ikili adlari kaldirildi; kart kimligi oneki `HLD-YKT-`, hafiza sablonu `70 YKT/YKT.md`, skill `ykt-altyapi-bakimi`.
 
 ---
 

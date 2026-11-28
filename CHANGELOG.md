@@ -1,5 +1,21 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.9.0 (2026-11-28)
+
+### Kirici Degisiklikler (yukseltme oncesi okuyun)
+- **Tek sozlesme, takma ad yok:** uygulama yalniz `YKT_*` ortam adlarini, `~/.ykt` ev klasorunu ve `ykt.json` ayar dosyasini tanir. Baska bir uygulamanin ortam adlari, ev klasoru, ayar dosyasi, kancasi ya da sureci okunmaz, yazilmaz, durdurulmaz.
+- **Disk ve bulut bicim adlari degisti:** ornek kokunde `.ykt-yedek/` (ustune yazilan dosyalarin tarihli kopyalari), `.ykt-cop/`, `.ykt-arsiv/` (yerel yedek deposu, isaret dosyasi `ykt-yedek.json`); ortak/bulut klasorunde `.ykt-kira`, `.ykt-manifest-*`, `.ykt-bulut-cop`, `.ykt-gecici`, `.ykt-sifre.json`; Drive ozelligi `ykt_sha256`; makine nabiz alani `ykt_acik`; guncelleme imza basligi `ykt-holding-guncelle 1`. Onceki surumle alinmis yerel/bulut yedekleri bu surum OKUMAZ: yukseltmeden once ornek klasorunun kopyasini alin, yukselttikten sonra yeni yedek alin.
+- **Yerlesik tarayici CDP portu `7715` -> `7815`** (ayni makinede baska bir uygulamanin tarayici paneliyle cakismasin).
+- **Eski ornek gocleri kalkti:** eski merkez bina kimligi, eski sahip kimligi/adi, eski kart durum takma adi ve `--patron-onayi` bayraginin eski takma adi artik okunmaz. (GM icin `demir` -> `gm` ve `butce-durdu` -> `engel` okuma uyumu duruyor.)
+- **Eski Node onyukleme yolu silindi:** `bin/kur.js`, `bin/ykt.js`, `bin/test-kapi.js`, `bin/test-kur.js` ve `hooks/*.js` yok. Tek kurucu `ykt kur`, tek kanca ikilisi `ykt-guard`.
+
+### Yenilikler ve Duzeltmeler
+- **Kurulum paketi baska uygulamalara dokunmaz (`paket/ykt-holding.nsi`, `paket/linux/*.sh`, `bin/paketle-linux.sh`):** "eski kurulum temizligi" tamamen kaldirildi. Onceki surumler her kurulumda baska bir uygulamanin kurulum klasorunu, kisayollarini ve kayit defteri anahtarlarini siliyor, Linux'ta `~/.local/bin` altina o uygulamanin komut adlariyla baglanti kuruyor ve `.deb` paketinde onu `Replaces/Conflicts` ile kaldiriyordu. Kurulum artik yalniz kendi klasorunu, kisayolunu ve `YKT Holding` kayit anahtarini yazar/siler; paket testi bunu denetler.
+- **Ortak `~/.claude` klasorune yazilmaz:** kanca, rol ve skill kopyalari `~/.ykt/claude/` altinda uretilir, kart kosusu ve sohbet koprusu bunlari Claude'a kosu basina verir. `ykt kur` onceki surumun ortak klasorde biraktigi kendi kayitlarini temizler, baska uygulamalarin kayitlarina dokunmaz.
+- **Kapi kurallari yalniz kendi kurulumunu korur (`ykt-guard/src/kapi.rs`):** gomulu yazma/okuma yasaklari `YKT Holding` kurulum klasoru ve `~/.ykt` ile sinirlidir.
+- **Paketleme ortami:** yalniz `YKT_KANAL`, `YKT_D_NO`, `YKT_PAKET` okunur.
+- **Tek ad:** kaynak, sablon, skill, rol ve belgelerde onceki urun adi ve ona bagli crate/ikili adlari kaldirildi; kart kimligi oneki `HLD-YKT-`, hafiza sablonu `70 YKT/YKT.md`, skill `ykt-altyapi-bakimi`.
+
 ## v1.8.17 (2026-11-25)
 
 ### Yenilikler ve Duzeltmeler
