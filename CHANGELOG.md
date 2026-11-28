@@ -1,5 +1,28 @@
 # YKT Holding — Sürüm Geçmişi
 
+## v1.9.1 (2026-11-28)
+
+1.9.0 degisikliginin bagimsiz incelemesinde (8 inceleyici + 2 dogrulayici) dogrulanan bulgularin duzeltmeleri.
+### Bagimsizlik (ayni makinede baska uygulamalarla yan yana calisma)
+- **Ortak `~/.gemini/AGENTS.md` dosyasina yazilmaz (`ykt/src/kur.rs`, `calisan.rs`):** bu dosya makinedeki butun Antigravity oturumlarina yuklendigi icin `ykt kur` oraya artik `@import` yazmaz ve onceki surumun ekledigi `# YKT Holding` blogunu cikarir (baska satirlara dokunmaz). Holding kurallari `agy` / `ollama` kosusuna istemdeki yonergeyle verilir.
+- **GM oturumu yalniz kendi kokunde aranir (`ykt-core/src/demir.rs`):** `~/.claude/sessions` icinde ad onekiyle eslesen oturum, calisma klasoru bu ornegin koku (ya da alti) degilse secilmez; ayni GM adini kullanan baska bir uygulamanin oturumuna ileti yazilmaz. `demir_oturum` kimligiyle secim degismedi.
+- **Yalitim klasoru sahipligi (`ykt/src/yalitim.rs`, `calisan.rs`):** kurulan her yalitim klasorune sahiplik isareti (`.kart-wt/<ID>.ykt`) konur; kalinti temizligi isaretsiz ve kartin kaydindaki dalda olmayan klasoru kaldirmaz. Sicak derleme tabani `_ykt-taban` adina tasindi.
+- **Drive koku (`ykt/src/bulut/drive.rs`):** kayitli kok kimligi yalniz `YKT/` ust klasoru altinda cozulduyse kullanilir; onceki surumden kalan kimlik birakilir ve esitleme `YKT/<klasor>` altinda bastan kurulur (yerel dosyalar durur, ilk esitleme yeniden yukler).
+- **Ortak gecit servisi (`ykt/src/motor/gecit.rs`):** calisan claude-code-router gecidi bu uygulamanin istemci anahtarini tanimiyorsa `ykt motor gecit kur|baslat|durdur` yapilandirmayi ezmez ve sureci durdurmaz, nedenini soyleyip durur.
+- **Profildeki gizli klasorler (`ykt-core/src/proje_baglanti.rs`, `ykt/src/dis_icerik.rs`):** ev klasorunun dogrudan altindaki adi `.` ile baslayan klasorler (hangi uygulamanin olursa olsun) kod silme ile silinmez ve `ykt dis topluluk` ile okunmaz.
+- **Linux kurulum/kaldirma:** onceki surumlerin `~/.local/bin` altinda YKT ikililerine baglayip biraktigi ek komut baglantilari, hedefi YKT kurulum klasoru olan baglanti olduklari dogrulanarak temizlenir.
+- **Kurulum hedefi denetimi (NSIS):** secilen hedef klasor bos degilse ve icinde `ykt-holding.exe` yoksa kurulum o klasore yazmaz.
+### Duzeltmeler
+- **Paketleme disk temizligi:** `paketle.js` artik ortak derleme klasoru `%TEMP%\ykt-build`i silmez.
+- **Ana hafiza kasasi kapsami (`ykt-core/src/kapsam.rs`):** ana vault anahtari bir sirket adi sayilmaz; ayni kisa adli sirket kapsamda olsa da ana vault acikca baglanmadikca kapsamli makinede okunmaz.
+- **`AGENTS.md` kopyasi:** ornek kokundeki isaretli kopya, isaretteki ad ne olursa olsun tazelenir (onceki surumun urettigi kopya bayat kalmaz).
+- **Ilk kurulum iletisi, bilinmeyen komut iletisi, guncelleme sonrasi acilis denetimi (ikili basina tek kez), yukseltme provasi (kanca artik `~/.ykt/claude/settings.json` icinde aranir).**
+- **Artik temizligi:** toplu yeniden adlandirmadan kalan cift liste ogeleri, kendine donen yedekler, anlamini yitirmis yorum ve testler, silinmis Node yoluna atiflar; kapi kural dosyalarinda yalniz birebir kopya girisler silindi (hicbir kural gevsetilmedi).
+- **Test:** `Ayarlar > Surecler` alt bilgisi testte sabit surum etiketi cizer (surum artisi ekran goruntusunu bozmaz).
+### Bilinen sinir
+- Kapi kurallari yalniz bu uygulamanin kurulumunu ve `~/.ykt` klasorunu korur. Ayni makinedeki baska bir uygulamanin klasorlerini ve komutlarini ajan oturumlarina yasaklamak isteniyorsa ornegin `kurallar/kapilar.json` dosyasina (sahip oturumunda) o yollar icin `yazma_yasak` / `okuma_yasak` / `komut_yasak` girisleri eklenir.
+- Yalitim klasoru ve kart dali adlari (`.kart-wt`, `kart/`) degismedi: iki uygulama AYNI kod deposunda AYNI kart kimligiyle calistirilmamalidir.
+
 ## v1.9.0 (2026-11-28)
 
 ### Kirici Degisiklikler (yukseltme oncesi okuyun)
